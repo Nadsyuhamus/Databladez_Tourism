@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640">
+<defs>
+  <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#EEF2F7"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="url(#canvas)"/>
+<rect x="24" y="24" width="952" height="592" rx="22" fill="#FFFFFF" filter="url(#shadow)"/>
+<text x="56.0" y="66.0" font-size="25" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#111827">Highest Tourism Growth, 2025</text>
+<text x="56.0" y="93.0" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="500" fill="#6B7280">Top 10 states/federal territories, sorted by tourism growth pct</text>
+<rect x="240" y="107" width="650" height="479" rx="14" fill="#F8FAFC" stroke="#E5E7EB"/>
+<line x1="250.0" y1="115" x2="250.0" y2="576" stroke="#E5E7EB" stroke-width="1"/>
+<text x="250.0" y="598.0" font-size="10" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="500" fill="#6B7280">0.0%</text>
+<line x1="407.5" y1="115" x2="407.5" y2="576" stroke="#E5E7EB" stroke-width="1"/>
+<text x="407.5" y="598.0" font-size="10" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="500" fill="#6B7280">8.6%</text>
+<line x1="565.0" y1="115" x2="565.0" y2="576" stroke="#E5E7EB" stroke-width="1"/>
+<text x="565.0" y="598.0" font-size="10" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="500" fill="#6B7280">17.2%</text>
+<line x1="722.5" y1="115" x2="722.5" y2="576" stroke="#E5E7EB" stroke-width="1"/>
+<text x="722.5" y="598.0" font-size="10" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="500" fill="#6B7280">25.8%</text>
+<line x1="880.0" y1="115" x2="880.0" y2="576" stroke="#E5E7EB" stroke-width="1"/>
+<text x="880.0" y="598.0" font-size="10" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="500" fill="#6B7280">34.4%</text>
+<rect x="56" y="131.0" width="34" height="31.6" rx="9" fill="#EFF6FF" stroke="#E2E8F0"/>
+<text x="73.0" y="152.1" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#1D4ED8">1</text>
+<text x="232.0" y="152.1" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">W.P. Labuan</text>
+<rect x="250.0" y="133.0" width="630.0" height="25.8" rx="8" fill="#1D4ED8" opacity="0.92"/>
+<rect x="250.0" y="133.0" width="220.5" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="890.0" y="150.8" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">34.4%</text>
+<rect x="56" y="175.5" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="196.6" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#0F766E">2</text>
+<text x="232.0" y="196.6" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">W.P. Kuala Lumpur</text>
+<rect x="250.0" y="177.5" width="548.0" height="25.8" rx="8" fill="#0F766E" opacity="0.92"/>
+<rect x="250.0" y="177.5" width="191.8" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="808.0" y="195.3" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">29.9%</text>
+<rect x="56" y="220.0" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="241.1" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#B45309">3</text>
+<text x="232.0" y="241.1" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">W.P. Putrajaya</text>
+<rect x="250.0" y="222.0" width="422.2" height="25.8" rx="8" fill="#B45309" opacity="0.92"/>
+<rect x="250.0" y="222.0" width="147.8" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="682.2" y="239.8" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">23.1%</text>
+<rect x="56" y="264.5" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="285.6" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#BE123C">4</text>
+<text x="232.0" y="285.6" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">Perlis</text>
+<rect x="250.0" y="266.5" width="301.0" height="25.8" rx="8" fill="#BE123C" opacity="0.92"/>
+<rect x="250.0" y="266.5" width="105.3" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="561.0" y="284.3" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">16.4%</text>
+<rect x="56" y="309.0" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="330.1" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#6D28D9">5</text>
+<text x="232.0" y="330.1" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">Sarawak</text>
+<rect x="250.0" y="311.0" width="288.8" height="25.8" rx="8" fill="#6D28D9" opacity="0.92"/>
+<rect x="250.0" y="311.0" width="101.1" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="548.8" y="328.8" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">15.8%</text>
+<rect x="56" y="353.5" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="374.6" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#047857">6</text>
+<text x="232.0" y="374.6" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">Pahang</text>
+<rect x="250.0" y="355.5" width="271.1" height="25.8" rx="8" fill="#047857" opacity="0.92"/>
+<rect x="250.0" y="355.5" width="94.9" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="531.1" y="373.3" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">14.8%</text>
+<rect x="56" y="398.0" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="419.1" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#C2410C">7</text>
+<text x="232.0" y="419.1" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">Kelantan</text>
+<rect x="250.0" y="400.0" width="269.5" height="25.8" rx="8" fill="#C2410C" opacity="0.92"/>
+<rect x="250.0" y="400.0" width="94.3" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="529.5" y="417.8" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">14.7%</text>
+<rect x="56" y="442.5" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="463.6" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#0369A1">8</text>
+<text x="232.0" y="463.6" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">Melaka</text>
+<rect x="250.0" y="444.5" width="163.1" height="25.8" rx="8" fill="#0369A1" opacity="0.92"/>
+<rect x="250.0" y="444.5" width="57.1" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="423.1" y="462.3" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">8.9%</text>
+<rect x="56" y="487.0" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="508.1" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#A21CAF">9</text>
+<text x="232.0" y="508.1" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">Negeri Sembilan</text>
+<rect x="250.0" y="489.0" width="161.8" height="25.8" rx="8" fill="#A21CAF" opacity="0.92"/>
+<rect x="250.0" y="489.0" width="56.6" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="421.8" y="506.8" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">8.8%</text>
+<rect x="56" y="531.5" width="34" height="31.6" rx="9" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="73.0" y="552.6" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle" font-weight="800" fill="#4D7C0F">10</text>
+<text x="232.0" y="552.6" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="700" fill="#111827">Sabah</text>
+<rect x="250.0" y="533.5" width="157.3" height="25.8" rx="8" fill="#4D7C0F" opacity="0.92"/>
+<rect x="250.0" y="533.5" width="55.1" height="25.8" rx="8" fill="#FFFFFF" opacity="0.13"/>
+<text x="417.3" y="551.3" font-size="12" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="start" font-weight="800" fill="#334155">8.6%</text>
+<line x1="250.0" y1="111" x2="250.0" y2="578" stroke="#94A3B8" stroke-width="1.4"/>
+<text x="944.0" y="604.0" font-size="10" font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="end" font-weight="500" fill="#6B7280">Source: cleaned DATATHON tables</text>
+</svg>

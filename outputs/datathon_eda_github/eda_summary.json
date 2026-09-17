@@ -1,0 +1,78 @@
+{
+  "latest_year": 2025,
+  "state_count": 16,
+  "district_count": 163,
+  "chart_count": 12,
+  "top_2025_by_visitors": [
+    {
+      "state": "Selangor",
+      "domestic_visitors_000": 36376.442
+    },
+    {
+      "state": "W.P. Kuala Lumpur",
+      "domestic_visitors_000": 35060.0
+    },
+    {
+      "state": "Perak",
+      "domestic_visitors_000": 23642.055
+    },
+    {
+      "state": "Pahang",
+      "domestic_visitors_000": 23161.166
+    },
+    {
+      "state": "Sarawak",
+      "domestic_visitors_000": 22721.527
+    }
+  ],
+  "top_2025_by_receipts": [
+    {
+      "state": "W.P. Kuala Lumpur",
+      "tourism_receipts_rm_million": 16906.0
+    },
+    {
+      "state": "Selangor",
+      "tourism_receipts_rm_million": 15761.7254823629
+    },
+    {
+      "state": "Pahang",
+      "tourism_receipts_rm_million": 9846.76892463924
+    },
+    {
+      "state": "Sabah",
+      "tourism_receipts_rm_million": 9753.3273839687
+    },
+    {
+      "state": "Sarawak",
+      "tourism_receipts_rm_million": 9138.37553459759
+    }
+  ],
+  "top_2025_by_growth": [
+    {
+      "state": "W.P. Labuan",
+      "tourism_growth_pct": 34.41
+    },
+    {
+      "state": "W.P. Kuala Lumpur",
+      "tourism_growth_pct": 29.93
+    },
+    {
+      "state": "W.P. Putrajaya",
+      "tourism_growth_pct": 23.06
+    },
+    {
+      "state": "Perlis",
+      "tourism_growth_pct": 16.4398027176548
+    },
+    {
+      "state": "Sarawak",
+      "tourism_growth_pct": 15.775225073924
+    }
+  ],
+  "main_limitations": [
+    "District-level actual tourism visitors are not available in the provided files.",
+    "District HIES prosperity fields are only populated for HIES years such as 2022 and 2024.",
+    "Map data has district names but no geometry or coordinates.",
+    "Emerging Viral Destination is a Google Trends proxy, not a full social-media virality measure."
+  ]
+}

@@ -1,0 +1,13 @@
+indicator,field,status,method
+Tourism Growth,tourism_growth_pct,available,Annual domestic visitor growth from tourism Table 1.
+Spending per Visitor,spending_per_visitor_rm,available,Average receipts per domestic visitor.
+Trips per Visitor,trips_per_visitor,available,Tourism trips divided by domestic visitors.
+Tourism Intensity,tourism_intensity,available,Domestic visitors divided by resident population.
+Tourism Value Growth,tourism_value_growth_pct,available,Annual tourism receipt growth.
+Local Prosperity Context,local_prosperity_context,available with gaps,Income/poverty context where HIES data exists.
+Google Search Interest,google_search_interest,available,Annual average Google Trends index.
+Search Interest Growth,search_interest_growth_pct,available,Year-on-year percentage change in search interest.
+Digital Interest Trend,digital_interest_trend,available,Categorical label from search growth.
+Emerging Viral Destination,emerging_viral_destination,available as search proxy,Uses Google Search Interest only.
+Opportunity Pattern,opportunity_pattern,available,"Rule-based flag using growth, search, intensity and poverty."
+Pressure Pattern,pressure_pattern,available,Rule-based flag using tourism intensity and growth momentum.

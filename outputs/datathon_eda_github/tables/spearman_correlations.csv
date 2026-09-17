@@ -1,0 +1,10 @@
+,tourism_growth_pct,tourism_value_growth_pct,spending_per_visitor_rm,trips_per_visitor,tourism_intensity,income_median,poverty,google_search_interest,search_interest_growth_pct
+tourism_growth_pct,1.0,0.98,0.367,0.231,0.419,-0.118,0.023,0.437,0.282
+tourism_value_growth_pct,0.98,1.0,0.383,0.233,0.373,-0.129,0.01,0.418,0.256
+spending_per_visitor_rm,0.367,0.383,1.0,0.31,0.255,0.362,-0.239,0.039,-0.07
+trips_per_visitor,0.231,0.233,0.31,1.0,0.435,-0.285,0.252,0.042,0.093
+tourism_intensity,0.419,0.373,0.255,0.435,1.0,0.157,-0.202,0.128,-0.009
+income_median,-0.118,-0.129,0.362,-0.285,0.157,1.0,-0.921,-0.226,0.022
+poverty,0.023,0.01,-0.239,0.252,-0.202,-0.921,1.0,0.134,-0.085
+google_search_interest,0.437,0.418,0.039,0.042,0.128,-0.226,0.134,1.0,0.419
+search_interest_growth_pct,0.282,0.256,-0.07,0.093,-0.009,0.022,-0.085,0.419,1.0

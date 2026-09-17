@@ -1,0 +1,34 @@
+source_state_name,canonical_state,normalized_key
+Johor,Johor,JOHOR
+JOHOR,Johor,JOHOR
+Kedah,Kedah,KEDAH
+KEDAH,Kedah,KEDAH
+KELANTAN,Kelantan,KELANTAN
+Kelantan,Kelantan,KELANTAN
+KUALA LUMPUR,W.P. Kuala Lumpur,KUALA LUMPUR
+LABUAN,W.P. Labuan,LABUAN
+MELAKA,Melaka,MELAKA
+Melaka,Melaka,MELAKA
+Negeri Sembilan,Negeri Sembilan,NEGERI SEMBILAN
+NEGERI SEMBILAN,Negeri Sembilan,NEGERI SEMBILAN
+Pahang,Pahang,PAHANG
+PAHANG,Pahang,PAHANG
+Perak,Perak,PERAK
+PERAK,Perak,PERAK
+PERLIS,Perlis,PERLIS
+Perlis,Perlis,PERLIS
+PULAU PINANG,Pulau Pinang,PULAU PINANG
+Pulau Pinang,Pulau Pinang,PULAU PINANG
+PUTRAJAYA,W.P. Putrajaya,PUTRAJAYA
+Sabah,Sabah,SABAH
+SABAH,Sabah,SABAH
+Sarawak,Sarawak,SARAWAK
+SARAWAK,Sarawak,SARAWAK
+Selangor,Selangor,SELANGOR
+SELANGOR,Selangor,SELANGOR
+Supra,Supra,SUPRA
+TERENGGANU,Terengganu,TERENGGANU
+Terengganu,Terengganu,TERENGGANU
+W.P. Kuala Lumpur,W.P. Kuala Lumpur,W P KUALA LUMPUR
+W.P. Labuan,W.P. Labuan,W P LABUAN
+W.P. Putrajaya,W.P. Putrajaya,W P PUTRAJAYA

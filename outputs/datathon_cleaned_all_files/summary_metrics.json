@@ -1,0 +1,29 @@
+{
+  "latest_year": 2025,
+  "state_count": 16,
+  "year_min": 2019,
+  "year_max": 2025,
+  "rows_cleaned_data": 112,
+  "top_state_by_visitors_latest": "Selangor",
+  "top_state_visitors_000_latest": 36376.442,
+  "total_domestic_visitors_000_latest": 290063.916530282,
+  "total_tourism_receipts_rm_million_latest": 121280.28307365919,
+  "indicators": {
+    "tourism_growth": "calculated",
+    "spending_per_visitor": "calculated",
+    "trips_per_visitor": "calculated",
+    "tourism_intensity": "calculated",
+    "tourism_value_growth": "calculated",
+    "local_prosperity_context": "calculated_where_HIES_available",
+    "google_search_interest": "calculated",
+    "search_interest_growth": "calculated",
+    "digital_interest_trend": "calculated",
+    "emerging_viral_destination": "search_proxy_only",
+    "opportunity_pattern": "calculated",
+    "pressure_pattern": "calculated"
+  },
+  "limitations": [
+    "No latitude/longitude or district geometry found; map_data.csv needs an external Malaysia district boundary file for a real map.",
+    "District tourism visitor counts are not available; district opportunity uses socioeconomic and Google Trends context."
+  ]
+}

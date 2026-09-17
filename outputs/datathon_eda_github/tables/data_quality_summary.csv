@@ -1,0 +1,5 @@
+dataset,rows,columns,duplicate_key_rows
+cleaned_data,112,27,0
+district_opportunity,960,19,0
+destination_rankings,320,5,0
+google_trends_monthly,14810,8,0
