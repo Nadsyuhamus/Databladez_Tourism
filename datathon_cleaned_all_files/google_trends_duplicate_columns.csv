@@ -1,0 +1,9 @@
+file,original_column,renamed_column
+time_series_MY_SABAH.csv,TUARAN,TUARAN__dup2
+time_series_MY_SABAH.csv,KOTA KINABALU,KOTA KINABALU__dup2
+time_series_MY_SABAH.csv,TENOM,TENOM__dup2
+time_series_MY_SABAH.csv,SABAH,SABAH__dup2
+time_series_MY_SABAH.csv,SANDAKAN,SANDAKAN__dup2
+time_series_MY_SABAH.csv,KINABATANGAN,KINABATANGAN__dup2
+time_series_MY_SABAH.csv,LAHAD DATU,LAHAD DATU__dup2
+time_series_MY_SABAH.csv,KUNAK,KUNAK__dup2

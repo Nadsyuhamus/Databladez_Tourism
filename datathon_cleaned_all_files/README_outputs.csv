@@ -1,0 +1,9 @@
+output_file,purpose
+state_name_mapping.csv,"Canonical state names across tourism, DOSM CSVs, and Google Trends."
+district_name_mapping.csv,Canonical district/area names and review flags.
+state_tourism.csv,State-level domestic tourism performance extracted from Table 1.
+destination_rankings_2024_2025.csv,Top destinations extracted from Table 9 for 2024 and 2025.
+google_trends_monthly.csv,Cleaned long-form monthly Google Trends data.
+district_context.csv,"District-level population, HIES, labour, GDP and annual Google Trends context."
+district_opportunity.csv,"Final district opportunity table, currently same structure as district_context."
+google_trends_duplicate_columns.csv,Audit list of Google Trends duplicate columns renamed during cleaning.

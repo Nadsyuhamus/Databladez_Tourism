@@ -1,0 +1,28 @@
+field,description,unit,source_or_method,available
+state,Canonical Malaysia state or federal territory name.,,Cleaned source data,yes
+year,Calendar year.,,Cleaned source data,yes
+domestic_visitors_000,Domestic visitors in thousands from tourism Table 1.,thousand visitors,Cleaned source data,yes
+tourism_receipts_rm_million,Domestic tourism receipts in RM million from tourism Table 1.,RM million,Cleaned source data,yes
+tourism_trips_000,Domestic tourism trips in thousands from tourism Table 1.,thousand trips,Cleaned source data,yes
+tourism_growth_pct,"Annual growth in domestic visitors, percent.",percent,Calculated,yes
+spending_per_visitor_rm,Average receipts per domestic visitor in RM.,RM per visitor,Calculated,yes
+trips_per_visitor,Domestic tourism trips divided by domestic visitors.,trips per visitor,Calculated,yes
+tourism_intensity,Domestic visitors divided by resident population.,visitors per resident,Calculated,yes
+tourism_value_growth_pct,"Annual growth in tourism receipts, percent.",percent,Calculated,yes
+local_prosperity_context,Rule-based label using income and poverty where available.,,Cleaned source data,yes
+income_mean,"Mean household income, RM, averaged across districts for state-year where available.",RM,Cleaned source data,yes
+income_median,"Median household income, RM, averaged across districts for state-year where available.",RM,Cleaned source data,yes
+expenditure_mean,"Mean household expenditure, RM, averaged across districts for state-year where available.",RM,Cleaned source data,yes
+gini,"Income inequality Gini coefficient, averaged across districts where available.",index,Cleaned source data,yes
+poverty,"Poverty rate, percent, averaged across districts where available.",percent,Cleaned source data,yes
+google_search_interest,"Annual average Google Trends index for the state, category Travel.",Google Trends index,Google Trends CSVs,yes
+search_interest_growth_pct,Year-on-year percent change in Google Search Interest.,percent,Calculated from Google Trends CSVs,yes
+digital_interest_trend,Categorical trend label based on Search Interest Growth.,,Calculated from search_interest_growth_pct,yes
+emerging_viral_destination,Search-only proxy flag; true viral scoring needs YouTube/social data.,,Cleaned source data,yes
+opportunity_pattern,"Rule-based opportunity label using tourism growth, search growth, intensity, and poverty.",,Calculated,yes
+pressure_pattern,"Rule-based pressure label using tourism intensity, tourism growth, and search growth.",,Calculated,yes
+average_length_of_stay,,,Cleaned source data,yes
+population_000,,,Cleaned source data,yes
+avg_receipts_per_trip_rm,,,Cleaned source data,yes
+tourism_receipts_rm,,,Cleaned source data,yes
+domestic_visitors,,,Cleaned source data,yes
