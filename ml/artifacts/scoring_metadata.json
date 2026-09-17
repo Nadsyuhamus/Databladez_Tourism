@@ -1,0 +1,36 @@
+{
+  "score_version": "tourism-intelligence-v1.0.0",
+  "generated_at": "2026-09-17T20:29:07.890072+00:00",
+  "geographic_level": "state",
+  "tourism_data_year": 2025,
+  "opportunity_weights": {
+    "visitor_growth_score": 0.2,
+    "spending_value_score": 0.2,
+    "forecast_momentum_score": 0.2,
+    "search_growth_score": 0.15,
+    "tourism_headroom_score": 0.15,
+    "development_context_score": 0.1
+  },
+  "pressure_weights": {
+    "tourism_intensity_score": 0.45,
+    "visitor_growth_score": 0.25,
+    "forecast_momentum_score": 0.2,
+    "search_growth_score": 0.1
+  },
+  "thresholds": {
+    "high_opportunity": 60,
+    "high_pressure": 60
+  },
+  "normalization": "cross-state percentile rank",
+  "interpretation": {
+    "opportunity": "Relative tourism-development potential based on demand, value, momentum, headroom and development context.",
+    "pressure": "Relative monitoring priority based on tourism intensity, growth and demand momentum."
+  },
+  "limitations": [
+    "Scores are relative across the sixteen states and territories.",
+    "Scores are not causal estimates of tourism development outcomes.",
+    "Pressure is state-level and must not be presented as attraction-level crowding.",
+    "Socioeconomic data years vary by state and are retained in the output.",
+    "Development context must not be used alone to prioritize communities."
+  ]
+}
