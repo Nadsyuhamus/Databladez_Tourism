@@ -1,0 +1,10 @@
+# Keep generated ML text artifacts byte-stable across Windows, macOS and Linux.
+ml/**/*.csv text eol=lf
+ml/**/*.json text eol=lf
+ml/**/*.md text eol=lf
+ml/**/*.txt text eol=lf
+ml/**/*.py text eol=lf
+
+# CatBoost models are binary artifacts and must never be line-normalized.
+ml/**/*.cbm binary
+
