@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import StateValueScatter from "@/components/StateValueScatter";
 
 type StateData = {
   state: string;
@@ -36,7 +37,9 @@ function formatCurrency(value: number) {
 function formatPercent(value: number | null) {
   if (value === null) return "N/A";
 
-  return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
+  return `${value > 0 ? "+" : ""}${value.toFixed(
+    1
+  )}%`;
 }
 
 export default function ExploreDashboard({
@@ -63,7 +66,10 @@ export default function ExploreDashboard({
 
   return (
     <div>
-      {/* FILTER */}
+      {/* ==============================================
+          STATE FILTER
+      ============================================== */}
+
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <div>
@@ -72,14 +78,17 @@ export default function ExploreDashboard({
             </p>
 
             <p className="mt-1 text-xs text-slate-500">
-              Explore state-level tourism indicators
+              Explore state-level tourism
+              indicators
             </p>
           </div>
 
           <select
             value={selectedState}
             onChange={(event) =>
-              setSelectedState(event.target.value)
+              setSelectedState(
+                event.target.value
+              )
             }
             className="min-w-60 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none transition focus:border-[#F59E0B]"
           >
@@ -95,7 +104,10 @@ export default function ExploreDashboard({
         </div>
       </div>
 
-      {/* STATE HEADER */}
+      {/* ==============================================
+          STATE PROFILE HEADER
+      ============================================== */}
+
       <div className="mt-6 rounded-2xl bg-[#1E3A5F] p-6 text-white">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -119,7 +131,10 @@ export default function ExploreDashboard({
         </div>
       </div>
 
-      {/* KPI GRID */}
+      {/* ==============================================
+          PRIMARY KPI CARDS
+      ============================================== */}
+
       <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard
           title="Domestic Visitors"
@@ -154,7 +169,26 @@ export default function ExploreDashboard({
         />
       </div>
 
-      {/* SECONDARY INDICATORS */}
+      {/* ==============================================
+          VALUE VS VOLUME CHART
+      ============================================== */}
+
+      <div className="mt-6">
+        <StateValueScatter
+          data={data.map((item) => ({
+            state: item.state,
+            visitors: item.visitors,
+            spendingPerVisitor:
+              item.spendingPerVisitor,
+          }))}
+          selectedState={selectedState}
+        />
+      </div>
+
+      {/* ==============================================
+          SECONDARY INDICATORS
+      ============================================== */}
+
       <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
         <IndicatorCard
           title="Tourism Intensity"
@@ -191,7 +225,10 @@ export default function ExploreDashboard({
         />
       </div>
 
-      {/* INSIGHT PANEL */}
+      {/* ==============================================
+          INSIGHT PANELS
+      ============================================== */}
+
       <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <InsightPanel
           eyebrow="OPPORTUNITY SIGNAL"
@@ -208,7 +245,7 @@ export default function ExploreDashboard({
             selectedData.pressurePattern ||
             "No pressure classification"
           }
-          description="Highlights the state's tourism pressure pattern. This should be interpreted together with tourism intensity and visitor growth."
+          description="Highlights the state's tourism pressure pattern. Interpret this together with tourism intensity and visitor growth."
         />
       </div>
     </div>
