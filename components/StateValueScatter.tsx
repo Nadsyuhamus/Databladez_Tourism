@@ -221,6 +221,7 @@ export default function StateValueScatter({
               name="Other States"
               data={otherData}
               fill="#1E3A5F"
+              isAnimationActive={false}
             />
 
             {/* SELECTED STATE */}
@@ -229,6 +230,7 @@ export default function StateValueScatter({
               name="Selected State"
               data={selectedData}
               fill="#F97316"
+              isAnimationActive={false}
             />
           </ScatterChart>
         </ResponsiveContainer>

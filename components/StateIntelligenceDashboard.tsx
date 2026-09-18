@@ -371,11 +371,13 @@ export default function StateIntelligenceDashboard({
               <Scatter
                 data={otherScatter}
                 fill="#1E3A5F"
+                isAnimationActive={false}
               />
 
               <Scatter
                 data={selectedScatter}
                 fill="#F97316"
+                isAnimationActive={false}
               />
             </ScatterChart>
           </ResponsiveContainer>
