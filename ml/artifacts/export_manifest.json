@@ -1,0 +1,73 @@
+{
+  "bundle_name": "Tourism ML dashboard bundle",
+  "generated_at": "2026-09-18T03:16:14.237427+00:00",
+  "branch_target": "feature/ml-tourism-engine",
+  "file_count": 12,
+  "forecast_series": 167,
+  "state_records": 16,
+  "district_records": 151,
+  "digitally_scored_districts": 116,
+  "constant_or_unscored_districts": 35,
+  "files": [
+    {
+      "path": "ml/artifacts/tourism_demand_residual_model.cbm",
+      "size_bytes": 35816,
+      "sha256": "7c5f927149f868822e28708a87025a85f4795ee6168ae57583d47cea6ba0a7d2"
+    },
+    {
+      "path": "ml/artifacts/model_metadata.json",
+      "size_bytes": 2979,
+      "sha256": "b45e9306e2ccb83f38c2e5797bce7ec501a86c007591e54ad9ac85b2fe26de70"
+    },
+    {
+      "path": "ml/artifacts/scoring_metadata.json",
+      "size_bytes": 1364,
+      "sha256": "46f16c01615b0b93717d1893c9b9236baf33aeed49bd0a0b4e5fdd39df9ff643"
+    },
+    {
+      "path": "ml/artifacts/district_signal_metadata.json",
+      "size_bytes": 1415,
+      "sha256": "081fb30befd3b4dddd45665d6cd5578e08e1e82551817833bd44e57de6a50733"
+    },
+    {
+      "path": "ml/outputs/demand_forecast_latest.csv",
+      "size_bytes": 36754,
+      "sha256": "1c55e1be3a1cfb0d3ce1a28e745f62b97987402ecd3e6437ac5178e9dc7dbc8e"
+    },
+    {
+      "path": "ml/outputs/demand_forecast_latest.json",
+      "size_bytes": 105075,
+      "sha256": "3975640021385a7ff28fec2a84119903d8fdfe4131bd07903a1c235af30765ca"
+    },
+    {
+      "path": "ml/outputs/series_registry.csv",
+      "size_bytes": 20647,
+      "sha256": "8d18944edbb4599b65b035a3076b6cafa5dfa50127542fefad6a9e42aa36b124"
+    },
+    {
+      "path": "ml/outputs/state_tourism_intelligence_latest.csv",
+      "size_bytes": 9323,
+      "sha256": "c3a4124d1cbd27a120d87bb803e35f47a9ab3c26697a5fb903146ea2f1579ce3"
+    },
+    {
+      "path": "ml/outputs/state_tourism_intelligence_latest.json",
+      "size_bytes": 27521,
+      "sha256": "cef9f32172fb9f65cd71d01f04b92038a22b23aed6771dbd4f406c91cfb8460e"
+    },
+    {
+      "path": "ml/outputs/district_series_crosswalk.csv",
+      "size_bytes": 23930,
+      "sha256": "f3f1bec14f05b792dc765ef8884afc0f5cbe39bc9f813d90dc5ce703bc2d7391"
+    },
+    {
+      "path": "ml/outputs/district_emerging_signals_latest.csv",
+      "size_bytes": 68025,
+      "sha256": "44e8e6b19469a7f44ea3c7929ab4d28cd505837148f82462c927d463398aabc3"
+    },
+    {
+      "path": "ml/outputs/district_emerging_signals_latest.json",
+      "size_bytes": 215081,
+      "sha256": "67c0c11b7c173601bb32bbdaa5cda29efd8bfd618a8a67531b7da1ce9d5cb5fd"
+    }
+  ]
+}
