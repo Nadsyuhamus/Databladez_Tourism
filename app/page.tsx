@@ -52,10 +52,6 @@ type StateComparisonRow = {
 };
 
 export default function Home() {
-  // =========================================================
-  // KPI DATA
-  // =========================================================
-
   const totalVisitors =
     summaryMetrics.total_domestic_visitors_000_latest * 1000;
 
@@ -76,10 +72,6 @@ export default function Home() {
   const topStateVisitorsDisplay = `${(
     topStateVisitors / 1_000_000
   ).toFixed(1)}M`;
-
-  // =========================================================
-  // TOURISM TREND CSV
-  // =========================================================
 
   const tourismTrendPath = path.join(
     process.cwd(),
@@ -107,58 +99,69 @@ export default function Home() {
     number
   >();
 
-  tourismTrendParsed.data.forEach((row) => {
-    const year = Number(row.year);
+  tourismTrendParsed.data.forEach(
+    (row) => {
+      const year = Number(
+        row.year
+      );
 
-    const visitorsThousand = Number(
-      row.domestic_visitors_000
-    );
+      const visitorsThousand =
+        Number(
+          row.domestic_visitors_000
+        );
 
-    if (
-      !Number.isFinite(year) ||
-      !Number.isFinite(visitorsThousand)
-    ) {
-      return;
-    }
+      if (
+        !Number.isFinite(year) ||
+        !Number.isFinite(
+          visitorsThousand
+        )
+      ) {
+        return;
+      }
 
-    const currentTotal =
-      yearlyVisitors.get(year) ?? 0;
+      const currentTotal =
+        yearlyVisitors.get(
+          year
+        ) ?? 0;
 
-    yearlyVisitors.set(
-      year,
-      currentTotal + visitorsThousand
-    );
-  });
-
-  const tourismTrendData = Array.from(
-    yearlyVisitors.entries()
-  )
-    .sort(
-      ([yearA], [yearB]) =>
-        yearA - yearB
-    )
-    .map(
-      ([year, visitorsThousand]) => ({
+      yearlyVisitors.set(
         year,
-
-        visitors: Number(
-          (
-            visitorsThousand / 1000
-          ).toFixed(1)
-        ),
-      })
-    );
-
-  // =========================================================
-  // STATE COMPARISON CSV
-  // =========================================================
-
-  const stateComparisonPath = path.join(
-    process.cwd(),
-    "datathon_final_package",
-    "chart_data",
-    "state_comparison.csv"
+        currentTotal +
+          visitorsThousand
+      );
+    }
   );
+
+  const tourismTrendData =
+    Array.from(
+      yearlyVisitors.entries()
+    )
+      .sort(
+        ([yearA], [yearB]) =>
+          yearA - yearB
+      )
+      .map(
+        ([
+          year,
+          visitorsThousand,
+        ]) => ({
+          year,
+          visitors: Number(
+            (
+              visitorsThousand /
+              1000
+            ).toFixed(1)
+          ),
+        })
+      );
+
+  const stateComparisonPath =
+    path.join(
+      process.cwd(),
+      "datathon_final_package",
+      "chart_data",
+      "state_comparison.csv"
+    );
 
   const stateComparisonFile =
     fs.readFileSync(
@@ -188,30 +191,31 @@ export default function Home() {
       .filter(
         (row) =>
           row.state &&
-          Number.isFinite(row.visitors)
+          Number.isFinite(
+            row.visitors
+          )
       )
       .sort(
         (a, b) =>
-          b.visitors - a.visitors
+          b.visitors -
+          a.visitors
       )
       .slice(0, 8)
       .map((row) => ({
         ...row,
 
         visitors: Number(
-          row.visitors.toFixed(1)
+          row.visitors.toFixed(
+            1
+          )
         ),
       }));
-
-  // =========================================================
-  // PAGE
-  // =========================================================
 
   return (
     <div className="flex min-h-screen bg-[#F6F7F9]">
       <Sidebar />
 
-      <main className="min-w-0 flex-1 p-8 lg:p-10">
+      <main className="min-w-0 flex-1 px-5 pb-8 pt-24 sm:px-8 md:p-8 lg:p-10">
         {/* PAGE HEADER */}
 
         <div className="mb-8">
@@ -219,16 +223,15 @@ export default function Home() {
             <span className="h-2 w-2 rounded-full bg-[#F59E0B]" />
 
             <p className="text-xs font-bold tracking-wider text-[#1E3A5F]">
-              SUSTAINABLE TOURISM
-              INTELLIGENCE
+              SUSTAINABLE TOURISM INTELLIGENCE
             </p>
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-[#14263D]">
+          <h2 className="text-3xl font-bold tracking-tight text-[#14263D] sm:text-4xl">
             Dashboard Overview
           </h2>
 
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
             Explore tourism trends,
             economic performance and
             sustainability indicators
@@ -236,9 +239,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* ===================================================
-            KPI CARDS
-        =================================================== */}
+        {/* KPI CARDS */}
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
           <KpiCard
@@ -272,23 +273,23 @@ export default function Home() {
           />
         </div>
 
-        {/* ===================================================
-            NATIONAL TREND
-        =================================================== */}
+        {/* TOURISM TREND */}
 
         <div className="mt-6">
           <TourismTrendChart
-            data={tourismTrendData}
+            data={
+              tourismTrendData
+            }
           />
         </div>
 
-        {/* ===================================================
-            STATE COMPARISON
-        =================================================== */}
+        {/* STATE COMPARISON */}
 
         <div className="mt-6">
           <StateComparisonChart
-            data={stateComparisonData}
+            data={
+              stateComparisonData
+            }
           />
         </div>
       </main>

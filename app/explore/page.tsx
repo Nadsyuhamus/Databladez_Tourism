@@ -107,7 +107,9 @@ export default function ExplorePage() {
     <div className="flex min-h-screen bg-[#F6F7F9]">
       <Sidebar />
 
-      <main className="min-w-0 flex-1 p-8 lg:p-10">
+      <main className="min-w-0 flex-1 px-5 pb-8 pt-24 sm:px-8 md:p-8 lg:p-10">
+        {/* PAGE HEADER */}
+
         <div className="mb-8">
           <div className="mb-3 flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-[#F59E0B]" />
@@ -117,16 +119,18 @@ export default function ExplorePage() {
             </p>
           </div>
 
-          <h1 className="text-3xl font-bold tracking-tight text-[#14263D]">
+          <h1 className="text-3xl font-bold tracking-tight text-[#14263D] sm:text-4xl">
             Explore Tourism Data
           </h1>
 
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
-            Select a state to explore tourism
-            performance, economic value and
-            demand indicators across Malaysia.
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
+            Select a state to explore tourism performance,
+            economic value and demand indicators across
+            Malaysia.
           </p>
         </div>
+
+        {/* INTERACTIVE EXPLORER */}
 
         <ExploreDashboard
           data={stateData}
