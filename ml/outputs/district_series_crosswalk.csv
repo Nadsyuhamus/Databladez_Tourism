@@ -1,0 +1,152 @@
+series_id,state,area,geo_level,canonical_district,matched_context_district,mapping_method,mapping_confidence,mapping_note,needs_review,context_match
+Johor | district_or_area | Batu Pahat,Johor,Batu Pahat,district_or_area,Batu Pahat,Batu Pahat,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Kluang,Johor,Kluang,district_or_area,Kluang,Kluang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Kota Tinggi,Johor,Kota Tinggi,district_or_area,Kota Tinggi,Kota Tinggi,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Kulai,Johor,Kulai,district_or_area,Kulai,Kulai,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Mersing,Johor,Mersing,district_or_area,Mersing,Mersing,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Muar,Johor,Muar,district_or_area,Muar,Muar,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Pontian,Johor,Pontian,district_or_area,Pontian,Pontian,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Segamat,Johor,Segamat,district_or_area,Segamat,Segamat,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Johor | district_or_area | Tangkak,Johor,Tangkak,district_or_area,Tangkak,Tangkak,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Baling,Kedah,Baling,district_or_area,Baling,Baling,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Bandar Baharu,Kedah,Bandar Baharu,district_or_area,Bandar Baharu,Bandar Baharu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Kota Setar,Kedah,Kota Setar,district_or_area,Kota Setar,Kota Setar,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Kuala Muda,Kedah,Kuala Muda,district_or_area,Kuala Muda,Kuala Muda,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Kubang Pasu,Kedah,Kubang Pasu,district_or_area,Kubang Pasu,Kubang Pasu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Kulim,Kedah,Kulim,district_or_area,Kulim,Kulim,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Langkawi,Kedah,Langkawi,district_or_area,Langkawi,Langkawi,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Padang Terap,Kedah,Padang Terap,district_or_area,Padang Terap,Padang Terap,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Pendang,Kedah,Pendang,district_or_area,Pendang,Pendang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Pokok Sena,Kedah,Pokok Sena,district_or_area,Pokok Sena,Pokok Sena,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Sik,Kedah,Sik,district_or_area,Sik,Sik,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kedah | district_or_area | Yan,Kedah,Yan,district_or_area,Yan,Yan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Bachok,Kelantan,Bachok,district_or_area,Bachok,Bachok,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Gua Musang,Kelantan,Gua Musang,district_or_area,Gua Musang,Gua Musang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Jeli,Kelantan,Jeli,district_or_area,Jeli,Jeli,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Kecil Lojing,Kelantan,Kecil Lojing,district_or_area,Kecil Lojing,Kecil Lojing,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Kota Bharu,Kelantan,Kota Bharu,district_or_area,Kota Bharu,Kota Bharu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Kuala Krai,Kelantan,Kuala Krai,district_or_area,Kuala Krai,Kuala Krai,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Machang,Kelantan,Machang,district_or_area,Machang,Machang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Pasir Mas,Kelantan,Pasir Mas,district_or_area,Pasir Mas,Pasir Mas,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Pasir Puteh,Kelantan,Pasir Puteh,district_or_area,Pasir Puteh,Pasir Puteh,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Tanah Merah,Kelantan,Tanah Merah,district_or_area,Tanah Merah,Tanah Merah,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Kelantan | district_or_area | Tumpat,Kelantan,Tumpat,district_or_area,Tumpat,Tumpat,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Melaka | district_or_area | Alor Gajah,Melaka,Alor Gajah,district_or_area,Alor Gajah,Alor Gajah,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Melaka | district_or_area | Jasin,Melaka,Jasin,district_or_area,Jasin,Jasin,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Melaka | district_or_area | Melaka Tengah,Melaka,Melaka Tengah,district_or_area,Melaka Tengah,Melaka Tengah,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Negeri Sembilan | district_or_area | Jelebu,Negeri Sembilan,Jelebu,district_or_area,Jelebu,Jelebu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Negeri Sembilan | district_or_area | Kuala Pilah,Negeri Sembilan,Kuala Pilah,district_or_area,Kuala Pilah,Kuala Pilah,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Negeri Sembilan | district_or_area | Port Dickson,Negeri Sembilan,Port Dickson,district_or_area,Port Dickson,Port Dickson,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Negeri Sembilan | district_or_area | Rembau,Negeri Sembilan,Rembau,district_or_area,Rembau,Rembau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Negeri Sembilan | district_or_area | Seremban,Negeri Sembilan,Seremban,district_or_area,Seremban,Seremban,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Negeri Sembilan | district_or_area | Tampin,Negeri Sembilan,Tampin,district_or_area,Tampin,Tampin,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Bentong,Pahang,Bentong,district_or_area,Bentong,Bentong,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Bera,Pahang,Bera,district_or_area,Bera,Bera,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Cameron Highlands,Pahang,Cameron Highlands,district_or_area,Cameron Highlands,Cameron Highlands,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Jerantut,Pahang,Jerantut,district_or_area,Jerantut,Jerantut,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Kuantan,Pahang,Kuantan,district_or_area,Kuantan,Kuantan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Lipis,Pahang,Lipis,district_or_area,Lipis,Lipis,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Maran,Pahang,Maran,district_or_area,Maran,Maran,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Pekan,Pahang,Pekan,district_or_area,Pekan,Pekan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Raub,Pahang,Raub,district_or_area,Raub,Raub,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Rompin,Pahang,Rompin,district_or_area,Rompin,Rompin,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pahang | district_or_area | Temerloh,Pahang,Temerloh,district_or_area,Temerloh,Temerloh,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Bagan Datuk,Perak,Bagan Datuk,district_or_area,Bagan Datuk,Bagan Datuk,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Batang Padang,Perak,Batang Padang,district_or_area,Batang Padang,Batang Padang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Hilir Perak,Perak,Hilir Perak,district_or_area,Hilir Perak,Hilir Perak,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Hulu Perak,Perak,Hulu Perak,district_or_area,Hulu Perak,Hulu Perak,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Kampar,Perak,Kampar,district_or_area,Kampar,Kampar,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Kerian,Perak,Kerian,district_or_area,Kerian,Kerian,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Kinta,Perak,Kinta,district_or_area,Kinta,Kinta,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Kuala Kangsar,Perak,Kuala Kangsar,district_or_area,Kuala Kangsar,Kuala Kangsar,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Larut Dan Matang,Perak,Larut Dan Matang,district_or_area,Larut Dan Matang,Larut Dan Matang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Manjung,Perak,Manjung,district_or_area,Manjung,Manjung,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Muallim,Perak,Muallim,district_or_area,Muallim,Muallim,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Perak Tengah,Perak,Perak Tengah,district_or_area,Perak Tengah,Perak Tengah,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Perak | district_or_area | Selama,Perak,Selama,district_or_area,Selama,Selama,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pulau Pinang | district_or_area | Barat Daya,Pulau Pinang,Barat Daya,district_or_area,Barat Daya,Barat Daya,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pulau Pinang | district_or_area | Seberang Perai Selatan,Pulau Pinang,Seberang Perai Selatan,district_or_area,Seberang Perai Selatan,Seberang Perai Selatan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pulau Pinang | district_or_area | Seberang Perai Tengah,Pulau Pinang,Seberang Perai Tengah,district_or_area,Seberang Perai Tengah,Seberang Perai Tengah,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pulau Pinang | district_or_area | Seberang Perai Utara,Pulau Pinang,Seberang Perai Utara,district_or_area,Seberang Perai Utara,Seberang Perai Utara,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Pulau Pinang | district_or_area | Timur Laut,Pulau Pinang,Timur Laut,district_or_area,Timur Laut,Timur Laut,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Beaufort,Sabah,Beaufort,district_or_area,Beaufort,Beaufort,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Beluran,Sabah,Beluran,district_or_area,Beluran,Beluran,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kalabakan,Sabah,Kalabakan,district_or_area,Kalabakan,Kalabakan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Keningau,Sabah,Keningau,district_or_area,Keningau,Keningau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kinabatangan,Sabah,Kinabatangan,district_or_area,Kinabatangan,Kinabatangan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kota Belud,Sabah,Kota Belud,district_or_area,Kota Belud,Kota Belud,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kota Kinabalu,Sabah,Kota Kinabalu,district_or_area,Kota Kinabalu,Kota Kinabalu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kota Marudu,Sabah,Kota Marudu,district_or_area,Kota Marudu,Kota Marudu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kuala Penyu,Sabah,Kuala Penyu,district_or_area,Kuala Penyu,Kuala Penyu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kudat,Sabah,Kudat,district_or_area,Kudat,Kudat,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Kunak,Sabah,Kunak,district_or_area,Kunak,Kunak,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Lahad Datu,Sabah,Lahad Datu,district_or_area,Lahad Datu,Lahad Datu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Nabawan,Sabah,Nabawan,district_or_area,Nabawan,Nabawan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Pitas,Sabah,Pitas,district_or_area,Pitas,Pitas,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Putatan,Sabah,Putatan,district_or_area,Putatan,Putatan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Ranau,Sabah,Ranau,district_or_area,Ranau,Ranau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Sandakan,Sabah,Sandakan,district_or_area,Sandakan,Sandakan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Semporna,Sabah,Semporna,district_or_area,Semporna,Semporna,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Sipitang,Sabah,Sipitang,district_or_area,Sipitang,Sipitang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Tawau,Sabah,Tawau,district_or_area,Tawau,Tawau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Telupid,Sabah,Telupid,district_or_area,Telupid,Telupid,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Tenom,Sabah,Tenom,district_or_area,Tenom,Tenom,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Tongod,Sabah,Tongod,district_or_area,Tongod,Tongod,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sabah | district_or_area | Tuaran,Sabah,Tuaran,district_or_area,Tuaran,Tuaran,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Asajaya,Sarawak,Asajaya,district_or_area,Asajaya,Asajaya,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Bau,Sarawak,Bau,district_or_area,Bau,Bau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Belaga,Sarawak,Belaga,district_or_area,Belaga,Belaga,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Beluru,Sarawak,Beluru,district_or_area,Beluru,Beluru,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Betong,Sarawak,Betong,district_or_area,Betong,Betong,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Bintulu,Sarawak,Bintulu,district_or_area,Bintulu,Bintulu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Bukit Mabong,Sarawak,Bukit Mabong,district_or_area,Bukit Mabong,Bukit Mabong,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Dalat,Sarawak,Dalat,district_or_area,Dalat,Dalat,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Daro,Sarawak,Daro,district_or_area,Daro,Daro,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Julau,Sarawak,Julau,district_or_area,Julau,Julau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Kabong,Sarawak,Kabong,district_or_area,Kabong,Kabong,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Kanowit,Sarawak,Kanowit,district_or_area,Kanowit,Kanowit,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Kapit,Sarawak,Kapit,district_or_area,Kapit,Kapit,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Kuching,Sarawak,Kuching,district_or_area,Kuching,Kuching,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Lawas,Sarawak,Lawas,district_or_area,Lawas,Lawas,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Limbang,Sarawak,Limbang,district_or_area,Limbang,Limbang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Lubok Antu,Sarawak,Lubok Antu,district_or_area,Lubok Antu,Lubok Antu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Lundu,Sarawak,Lundu,district_or_area,Lundu,Lundu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Maradong,Sarawak,Maradong,district_or_area,Maradong,Maradong,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Marudi,Sarawak,Marudi,district_or_area,Marudi,Marudi,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Matu,Sarawak,Matu,district_or_area,Matu,Matu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Miri,Sarawak,Miri,district_or_area,Miri,Miri,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Mukah,Sarawak,Mukah,district_or_area,Mukah,Mukah,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Pakan,Sarawak,Pakan,district_or_area,Pakan,Pakan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Pusa,Sarawak,Pusa,district_or_area,Pusa,Pusa,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Samarahan,Sarawak,Samarahan,district_or_area,Samarahan,Samarahan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Saratok,Sarawak,Saratok,district_or_area,Saratok,Saratok,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Sarikei,Sarawak,Sarikei,district_or_area,Sarikei,Sarikei,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Sebauh,Sarawak,Sebauh,district_or_area,Sebauh,Sebauh,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Selangau,Sarawak,Selangau,district_or_area,Selangau,Selangau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Serian,Sarawak,Serian,district_or_area,Serian,Serian,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Sibu,Sarawak,Sibu,district_or_area,Sibu,Sibu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Simunjan,Sarawak,Simunjan,district_or_area,Simunjan,Simunjan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Song,Sarawak,Song,district_or_area,Song,Song,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Sri Aman,Sarawak,Sri Aman,district_or_area,Sri Aman,Sri Aman,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Subis,Sarawak,Subis,district_or_area,Subis,Subis,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Tanjung,Sarawak,Tanjung,district_or_area,Tanjung Manis,Tanjung Manis,manual_reviewed_override,medium,Shortened Google Trends label matched to Tanjung Manis in DOSM context.,yes,True
+Sarawak | district_or_area | Tatau,Sarawak,Tatau,district_or_area,Tatau,Tatau,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Tebedu,Sarawak,Tebedu,district_or_area,Tebedu,Tebedu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Sarawak | district_or_area | Telang Usan,Sarawak,Telang Usan,district_or_area,Telang Usan,Telang Usan,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Selangor | district_or_area | Gombak,Selangor,Gombak,district_or_area,Gombak,Gombak,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Selangor | district_or_area | Hulu Langat,Selangor,Hulu Langat,district_or_area,Ulu Langat,Ulu Langat,manual_reviewed_override,high,Google Trends uses Hulu; DOSM context uses Ulu.,,True
+Selangor | district_or_area | Hulu Selangor,Selangor,Hulu Selangor,district_or_area,Ulu Selangor,Ulu Selangor,manual_reviewed_override,high,Google Trends uses Hulu; DOSM context uses Ulu.,,True
+Selangor | district_or_area | Klang,Selangor,Klang,district_or_area,Klang,Klang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Selangor | district_or_area | Kuala Langat,Selangor,Kuala Langat,district_or_area,Kuala Langat,Kuala Langat,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Selangor | district_or_area | Kuala Selangor,Selangor,Kuala Selangor,district_or_area,Kuala Selangor,Kuala Selangor,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Selangor | district_or_area | Petaling,Selangor,Petaling,district_or_area,Petaling,Petaling,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Selangor | district_or_area | Sabak Bernam,Selangor,Sabak Bernam,district_or_area,Sabak Bernam,Sabak Bernam,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Selangor | district_or_area | Sepang,Selangor,Sepang,district_or_area,Sepang,Sepang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Besut,Terengganu,Besut,district_or_area,Besut,Besut,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Dungun,Terengganu,Dungun,district_or_area,Dungun,Dungun,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Hulu Terengganu,Terengganu,Hulu Terengganu,district_or_area,Hulu Terengganu,Hulu Terengganu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Kemaman,Terengganu,Kemaman,district_or_area,Kemaman,Kemaman,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Kuala Nerus,Terengganu,Kuala Nerus,district_or_area,Kuala Nerus,Kuala Nerus,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Kuala Terengganu,Terengganu,Kuala Terengganu,district_or_area,Kuala Terengganu,Kuala Terengganu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Marang,Terengganu,Marang,district_or_area,Marang,Marang,supplied_mapping,high,Mapped using district_name_mapping.csv,,True
+Terengganu | district_or_area | Setiu,Terengganu,Setiu,district_or_area,Setiu,Setiu,supplied_mapping,high,Mapped using district_name_mapping.csv,,True

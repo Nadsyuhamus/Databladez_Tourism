@@ -1,0 +1,168 @@
+series_id,state,area,geo_level,observations,unique_trend_values,trend_standard_deviation,start_month,end_month,eligible_for_training,exclusion_reason
+Johor | district_or_area | Batu Pahat,Johor,Batu Pahat,district_or_area,85,14,3.119469896789324,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Kluang,Johor,Kluang,district_or_area,85,6,1.2092083666389262,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Kota Tinggi,Johor,Kota Tinggi,district_or_area,85,39,11.706638208779689,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Kulai,Johor,Kulai,district_or_area,85,9,1.618520263431155,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Mersing,Johor,Mersing,district_or_area,85,42,15.251835541827676,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Muar,Johor,Muar,district_or_area,85,16,3.2823695069007575,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Pontian,Johor,Pontian,district_or_area,85,7,1.6317061579813927,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Segamat,Johor,Segamat,district_or_area,85,6,1.100929070343395,2018-12-01,2025-12-01,True,
+Johor | district_or_area | Tangkak,Johor,Tangkak,district_or_area,85,5,0.7944132658602762,2018-12-01,2025-12-01,True,
+Johor | state | Johor,Johor,Johor,state,85,35,11.15598594517596,2018-12-01,2025-12-01,True,
+Kedah | district_or_area | Baling,Kedah,Baling,district_or_area,85,3,0.35226358860140766,2018-12-01,2025-12-01,True,
+Kedah | district_or_area | Bandar Baharu,Kedah,Bandar Baharu,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Kedah | district_or_area | Kota Setar,Kedah,Kota Setar,district_or_area,85,3,0.26303550153929417,2018-12-01,2025-12-01,True,
+Kedah | district_or_area | Kuala Muda,Kedah,Kuala Muda,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Kedah | district_or_area | Kubang Pasu,Kedah,Kubang Pasu,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Kedah | district_or_area | Kulim,Kedah,Kulim,district_or_area,85,2,0.5026540206004229,2018-12-01,2025-12-01,True,
+Kedah | district_or_area | Langkawi,Kedah,Langkawi,district_or_area,85,42,16.475412458760314,2018-12-01,2025-12-01,True,
+Kedah | district_or_area | Padang Terap,Kedah,Padang Terap,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Kedah | district_or_area | Pendang,Kedah,Pendang,district_or_area,85,7,1.3558670104918311,2018-12-01,2025-12-01,True,
+Kedah | district_or_area | Pokok Sena,Kedah,Pokok Sena,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Kedah | district_or_area | Sik,Kedah,Sik,district_or_area,85,5,1.236127503327142,2018-12-01,2025-12-01,True,
+Kedah | district_or_area | Yan,Kedah,Yan,district_or_area,85,10,1.6181740929078008,2018-12-01,2025-12-01,True,
+Kedah | state | Kedah,Kedah,Kedah,state,85,39,12.247471584947224,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Bachok,Kelantan,Bachok,district_or_area,85,7,1.6975018718817414,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Gua Musang,Kelantan,Gua Musang,district_or_area,85,5,1.5437594622579403,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Jeli,Kelantan,Jeli,district_or_area,85,6,1.8336261543590557,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Kecil Lojing,Kelantan,Kecil Lojing,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Kelantan | district_or_area | Kota Bharu,Kelantan,Kota Bharu,district_or_area,85,29,7.379849922183349,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Kuala Krai,Kelantan,Kuala Krai,district_or_area,85,8,1.9508670772098176,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Machang,Kelantan,Machang,district_or_area,85,5,1.490398777309671,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Pasir Mas,Kelantan,Pasir Mas,district_or_area,85,4,1.1729920563011744,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Pasir Puteh,Kelantan,Pasir Puteh,district_or_area,85,7,1.8556447308002624,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Tanah Merah,Kelantan,Tanah Merah,district_or_area,85,14,3.226422774772181,2018-12-01,2025-12-01,True,
+Kelantan | district_or_area | Tumpat,Kelantan,Tumpat,district_or_area,85,3,0.8306118024604241,2018-12-01,2025-12-01,True,
+Kelantan | state | Kelantan,Kelantan,Kelantan,state,85,45,13.42430798283201,2018-12-01,2025-12-01,True,
+Melaka | district_or_area | Alor Gajah,Melaka,Alor Gajah,district_or_area,85,3,0.35226358860140766,2018-12-01,2025-12-01,True,
+Melaka | district_or_area | Jasin,Melaka,Jasin,district_or_area,85,6,0.9976162063830436,2018-12-01,2025-12-01,True,
+Melaka | district_or_area | Melaka Tengah,Melaka,Melaka Tengah,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Melaka | state | Melaka,Melaka,Melaka,state,85,41,15.83995586107083,2018-12-01,2025-12-01,True,
+Negeri Sembilan | district_or_area | Jelebu,Negeri Sembilan,Jelebu,district_or_area,85,2,0.32410186177608225,2018-12-01,2025-12-01,True,
+Negeri Sembilan | district_or_area | Kuala Pilah,Negeri Sembilan,Kuala Pilah,district_or_area,85,2,0.152477210493529,2018-12-01,2025-12-01,True,
+Negeri Sembilan | district_or_area | Port Dickson,Negeri Sembilan,Port Dickson,district_or_area,85,40,16.465420858077497,2018-12-01,2025-12-01,True,
+Negeri Sembilan | district_or_area | Rembau,Negeri Sembilan,Rembau,district_or_area,85,4,0.42008402520840304,2018-12-01,2025-12-01,True,
+Negeri Sembilan | district_or_area | Seremban,Negeri Sembilan,Seremban,district_or_area,85,10,1.7886977877524095,2018-12-01,2025-12-01,True,
+Negeri Sembilan | district_or_area | Tampin,Negeri Sembilan,Tampin,district_or_area,85,3,0.5204501391477723,2018-12-01,2025-12-01,True,
+Negeri Sembilan | state | Negeri Sembilan,Negeri Sembilan,Negeri Sembilan,state,85,43,15.33404882023298,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Bentong,Pahang,Bentong,district_or_area,85,13,2.333953499017114,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Bera,Pahang,Bera,district_or_area,85,5,0.7337406559132836,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Cameron Highlands,Pahang,Cameron Highlands,district_or_area,85,43,16.109221048862683,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Jerantut,Pahang,Jerantut,district_or_area,85,3,0.5957364860274328,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Kuantan,Pahang,Kuantan,district_or_area,85,44,15.570099909906867,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Lipis,Pahang,Lipis,district_or_area,85,2,0.45834924851410574,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Maran,Pahang,Maran,district_or_area,85,2,0.5026540206004229,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Pekan,Pahang,Pekan,district_or_area,85,9,1.7224827368399038,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Raub,Pahang,Raub,district_or_area,85,7,1.0758359397174249,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Rompin,Pahang,Rompin,district_or_area,85,11,2.1147077328837205,2018-12-01,2025-12-01,True,
+Pahang | district_or_area | Temerloh,Pahang,Temerloh,district_or_area,85,5,0.6985378887883098,2018-12-01,2025-12-01,True,
+Pahang | state | Pahang,Pahang,Pahang,state,85,37,13.006731719690814,2018-12-01,2025-12-01,True,
+Perak | district_or_area | Bagan Datuk,Perak,Bagan Datuk,district_or_area,85,4,0.8194074514114278,2018-12-01,2025-12-01,True,
+Perak | district_or_area | Batang Padang,Perak,Batang Padang,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Perak | district_or_area | Hilir Perak,Perak,Hilir Perak,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Perak | district_or_area | Hulu Perak,Perak,Hulu Perak,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Perak | district_or_area | Kampar,Perak,Kampar,district_or_area,85,14,2.8158713842540934,2018-12-01,2025-12-01,True,
+Perak | district_or_area | Kerian,Perak,Kerian,district_or_area,85,4,0.9200535850915293,2018-12-01,2025-12-01,True,
+Perak | district_or_area | Kinta,Perak,Kinta,district_or_area,85,4,1.2831596157297718,2018-12-01,2025-12-01,True,
+Perak | district_or_area | Kuala Kangsar,Perak,Kuala Kangsar,district_or_area,85,10,1.9120728043052093,2018-12-01,2025-12-01,True,
+Perak | district_or_area | Larut Dan Matang,Perak,Larut Dan Matang,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Perak | district_or_area | Manjung,Perak,Manjung,district_or_area,85,8,1.8373650601188802,2018-12-01,2025-12-01,True,
+Perak | district_or_area | Muallim,Perak,Muallim,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Perak | district_or_area | Perak Tengah,Perak,Perak Tengah,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Perak | district_or_area | Selama,Perak,Selama,district_or_area,85,2,0.21693045781865616,2018-12-01,2025-12-01,True,
+Perak | state | Perak,Perak,Perak,state,85,39,11.959806636811317,2018-12-01,2025-12-01,True,
+Perlis | state | Perlis,Perlis,Perlis,state,84,48,19.762542586946154,2019-01-01,2025-12-01,True,
+Pulau Pinang | district_or_area | Barat Daya,Pulau Pinang,Barat Daya,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Pulau Pinang | district_or_area | Seberang Perai Selatan,Pulau Pinang,Seberang Perai Selatan,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Pulau Pinang | district_or_area | Seberang Perai Tengah,Pulau Pinang,Seberang Perai Tengah,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Pulau Pinang | district_or_area | Seberang Perai Utara,Pulau Pinang,Seberang Perai Utara,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Pulau Pinang | district_or_area | Timur Laut,Pulau Pinang,Timur Laut,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Pulau Pinang | state | Pulau Pinang,Pulau Pinang,Pulau Pinang,state,85,46,15.050726552160162,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Beaufort,Sabah,Beaufort,district_or_area,85,2,0.3834824944236852,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Beluran,Sabah,Beluran,district_or_area,85,2,0.10846522890932808,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kalabakan,Sabah,Kalabakan,district_or_area,85,2,0.15247721049352903,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Keningau,Sabah,Keningau,district_or_area,85,3,0.3712345970547737,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kinabatangan,Sabah,Kinabatangan,district_or_area,85,8,1.4476872311821123,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kota Belud,Sabah,Kota Belud,district_or_area,85,2,0.49873790290925285,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kota Kinabalu,Sabah,Kota Kinabalu,district_or_area,85,39,11.711303166118608,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kota Marudu,Sabah,Kota Marudu,district_or_area,85,2,0.2576558841203685,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kuala Penyu,Sabah,Kuala Penyu,district_or_area,85,2,0.3095130357961213,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kudat,Sabah,Kudat,district_or_area,85,3,0.5139510271059933,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Kunak,Sabah,Kunak,district_or_area,85,2,0.10846522890932808,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Lahad Datu,Sabah,Lahad Datu,district_or_area,85,9,1.6231000528348842,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Nabawan,Sabah,Nabawan,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Sabah | district_or_area | Pitas,Sabah,Pitas,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Sabah | district_or_area | Putatan,Sabah,Putatan,district_or_area,85,2,0.3095130357961213,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Ranau,Sabah,Ranau,district_or_area,85,15,3.6534776801923754,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Sandakan,Sabah,Sandakan,district_or_area,85,24,6.0097260106172135,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Semporna,Sabah,Semporna,district_or_area,85,26,6.569217750138862,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Sipitang,Sabah,Sipitang,district_or_area,85,2,0.10846522890932808,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Tawau,Sabah,Tawau,district_or_area,85,27,6.679224866549051,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Telupid,Sabah,Telupid,district_or_area,85,2,0.15247721049352903,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Tenom,Sabah,Tenom,district_or_area,85,2,0.4338609156373123,2018-12-01,2025-12-01,True,
+Sabah | district_or_area | Tongod,Sabah,Tongod,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Sabah | district_or_area | Tuaran,Sabah,Tuaran,district_or_area,85,6,1.0224373581107569,2018-12-01,2025-12-01,True,
+Sabah | state | Sabah,Sabah,Sabah,state,85,43,17.722993025804566,2018-12-01,2025-12-01,True,
+Sarawak | district_or_area | Asajaya,Sarawak,Asajaya,district_or_area,84,2,0.10910894511799621,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Bau,Sarawak,Bau,district_or_area,84,4,0.8423493905126743,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Belaga,Sarawak,Belaga,district_or_area,84,2,0.1533709949008578,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Beluru,Sarawak,Beluru,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Betong,Sarawak,Betong,district_or_area,84,8,2.0912557340118147,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Bintulu,Sarawak,Bintulu,district_or_area,84,16,3.673102368537161,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Bukit Mabong,Sarawak,Bukit Mabong,district_or_area,84,2,0.10910894511799621,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Dalat,Sarawak,Dalat,district_or_area,84,12,3.399149432941994,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Daro,Sarawak,Daro,district_or_area,84,2,0.10910894511799618,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Julau,Sarawak,Julau,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Kabong,Sarawak,Kabong,district_or_area,84,2,0.18669145807013002,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Kanowit,Sarawak,Kanowit,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Kapit,Sarawak,Kapit,district_or_area,79,2,0.3484094708297162,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Kuching,Sarawak,Kuching,district_or_area,84,42,18.770876692863954,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Lawas,Sarawak,Lawas,district_or_area,76,2,0.5026246899500345,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Limbang,Sarawak,Limbang,district_or_area,79,3,0.33752637027780713,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Lubok Antu,Sarawak,Lubok Antu,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Lundu,Sarawak,Lundu,district_or_area,84,5,0.909801917752847,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Maradong,Sarawak,Maradong,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Marudi,Sarawak,Marudi,district_or_area,84,2,0.3520287893093146,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Matu,Sarawak,Matu,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Miri,Sarawak,Miri,district_or_area,84,31,10.280880326453653,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Mukah,Sarawak,Mukah,district_or_area,84,4,0.7447463729813304,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Pakan,Sarawak,Pakan,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Pusa,Sarawak,Pusa,district_or_area,84,2,0.1091089451179962,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Samarahan,Sarawak,Samarahan,district_or_area,84,4,0.7300610243357467,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Saratok,Sarawak,Saratok,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Sarikei,Sarawak,Sarikei,district_or_area,84,3,0.5519485121538484,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Sebauh,Sarawak,Sebauh,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Selangau,Sarawak,Selangau,district_or_area,84,2,0.10910894511799621,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Serian,Sarawak,Serian,district_or_area,84,4,0.8977405181152005,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Sibu,Sarawak,Sibu,district_or_area,84,25,7.293327611829255,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Simunjan,Sarawak,Simunjan,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Song,Sarawak,Song,district_or_area,84,13,2.8649062627658304,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Sri Aman,Sarawak,Sri Aman,district_or_area,84,3,0.6249497971805288,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Subis,Sarawak,Subis,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Tanjung,Sarawak,Tanjung,district_or_area,84,38,13.262276595419134,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Tatau,Sarawak,Tatau,district_or_area,84,2,0.10910894511799618,2019-01-01,2025-12-01,True,
+Sarawak | district_or_area | Tebedu,Sarawak,Tebedu,district_or_area,84,1,0.0,2019-01-01,2025-12-01,False,constant_series
+Sarawak | district_or_area | Telang Usan,Sarawak,Telang Usan,district_or_area,82,2,0.15520673239323962,2019-01-01,2025-12-01,True,
+Sarawak | state | Sarawak,Sarawak,Sarawak,state,84,28,10.021033530705436,2019-01-01,2025-12-01,True,
+Selangor | district_or_area | Gombak,Selangor,Gombak,district_or_area,85,15,3.682611118467433,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Hulu Langat,Selangor,Hulu Langat,district_or_area,85,9,1.3313711051423052,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Hulu Selangor,Selangor,Hulu Selangor,district_or_area,85,5,0.8099521028823776,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Klang,Selangor,Klang,district_or_area,85,20,4.392506988845758,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Kuala Langat,Selangor,Kuala Langat,district_or_area,85,2,0.18561729852738684,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Kuala Selangor,Selangor,Kuala Selangor,district_or_area,85,12,2.1960621748097786,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Petaling,Selangor,Petaling,district_or_area,85,21,4.769417043578207,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Sabak Bernam,Selangor,Sabak Bernam,district_or_area,85,3,0.46532419950423565,2018-12-01,2025-12-01,True,
+Selangor | district_or_area | Sepang,Selangor,Sepang,district_or_area,85,21,4.996076892295143,2018-12-01,2025-12-01,True,
+Selangor | state | Selangor,Selangor,Selangor,state,85,36,14.07962550431426,2018-12-01,2025-12-01,True,
+Terengganu | district_or_area | Besut,Terengganu,Besut,district_or_area,85,4,0.6658959129975035,2018-12-01,2025-12-01,True,
+Terengganu | district_or_area | Dungun,Terengganu,Dungun,district_or_area,85,4,0.6142563995350377,2018-12-01,2025-12-01,True,
+Terengganu | district_or_area | Hulu Terengganu,Terengganu,Hulu Terengganu,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Terengganu | district_or_area | Kemaman,Terengganu,Kemaman,district_or_area,85,2,0.25765588412036844,2018-12-01,2025-12-01,True,
+Terengganu | district_or_area | Kuala Nerus,Terengganu,Kuala Nerus,district_or_area,85,1,0.0,2018-12-01,2025-12-01,False,constant_series
+Terengganu | district_or_area | Kuala Terengganu,Terengganu,Kuala Terengganu,district_or_area,85,19,4.431773487724591,2018-12-01,2025-12-01,True,
+Terengganu | district_or_area | Marang,Terengganu,Marang,district_or_area,85,4,0.7926482930825063,2018-12-01,2025-12-01,True,
+Terengganu | district_or_area | Setiu,Terengganu,Setiu,district_or_area,85,2,0.373116183345764,2018-12-01,2025-12-01,True,
+Terengganu | state | Terengganu,Terengganu,Terengganu,state,85,39,13.102248187354155,2018-12-01,2025-12-01,True,
+W.P. Kuala Lumpur | state | W.P. Kuala Lumpur,W.P. Kuala Lumpur,W.P. Kuala Lumpur,state,84,50,24.64158452483189,2019-01-01,2025-12-01,True,
+W.P. Labuan | state | W.P. Labuan,W.P. Labuan,W.P. Labuan,state,84,50,20.212766709133753,2019-01-01,2025-12-01,True,
+W.P. Putrajaya | state | W.P. Putrajaya,W.P. Putrajaya,W.P. Putrajaya,state,84,54,22.38416988383556,2019-01-01,2025-12-01,True,

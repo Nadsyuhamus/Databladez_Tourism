@@ -1,0 +1,116 @@
+{
+  "model_name": "Tourism Demand Segmented Hybrid",
+  "model_version": "demand-hybrid-v1.0.0",
+  "created_at": "2026-09-17T20:10:20.703918+00:00",
+  "target": "next-month Google Trends index",
+  "interpretation": "Forecasts digital tourism-search interest, not tourist arrivals.",
+  "architecture": {
+    "state": "three-month mean plus CatBoost residual correction",
+    "district_or_area": "three-month mean",
+    "constant_or_insufficient_series": "three-month mean"
+  },
+  "training": {
+    "rows": 9433,
+    "series": 132,
+    "target_start": "2020-01-01",
+    "target_end": "2025-12-01",
+    "iterations": 13,
+    "random_seed": 42
+  },
+  "features": {
+    "columns": [
+      "series_id",
+      "state",
+      "area",
+      "geo_level",
+      "trend_current",
+      "trend_lag_1",
+      "trend_lag_2",
+      "trend_lag_3",
+      "trend_lag_6",
+      "trend_lag_12",
+      "rolling_mean_3",
+      "rolling_mean_6",
+      "rolling_mean_12",
+      "rolling_std_3",
+      "rolling_std_6",
+      "rolling_std_12",
+      "trend_diff_1",
+      "trend_diff_3",
+      "trend_diff_12",
+      "calendar_year",
+      "calendar_month",
+      "month_sin",
+      "month_cos",
+      "time_index"
+    ],
+    "categorical": [
+      "series_id",
+      "state",
+      "area",
+      "geo_level"
+    ]
+  },
+  "rolling_validation": [
+    {
+      "validation_year": 2022,
+      "hybrid_mae": 2.1890095174,
+      "baseline_mae": 2.1869455006,
+      "hybrid_rmse": 4.6665477782,
+      "baseline_rmse": 4.6676095975,
+      "mae_improvement_pct": -0.0943789762,
+      "hybrid_wins": false
+    },
+    {
+      "validation_year": 2023,
+      "hybrid_mae": 1.7190531865,
+      "baseline_mae": 1.7496296296,
+      "hybrid_rmse": 4.1067066515,
+      "baseline_rmse": 4.1954960313,
+      "mae_improvement_pct": 1.7475951843,
+      "hybrid_wins": true
+    },
+    {
+      "validation_year": 2024,
+      "hybrid_mae": 1.8342575038,
+      "baseline_mae": 1.916138572,
+      "hybrid_rmse": 4.0599445238,
+      "baseline_rmse": 4.307951076,
+      "mae_improvement_pct": 4.2732331275,
+      "hybrid_wins": true
+    }
+  ],
+  "final_test": [
+    {
+      "method": "Same month last year",
+      "MAE": 1.7544191919,
+      "RMSE": 3.7553833413,
+      "sMAPE_pct": 27.8807193167
+    },
+    {
+      "method": "Segmented hybrid",
+      "MAE": 1.8206605486,
+      "RMSE": 4.1286532411,
+      "sMAPE_pct": 37.1545349734
+    },
+    {
+      "method": "Three-month mean",
+      "MAE": 1.8543771044,
+      "RMSE": 4.23820738,
+      "sMAPE_pct": 37.2104807665
+    },
+    {
+      "method": "Last observation",
+      "MAE": 1.9330808081,
+      "RMSE": 4.3164004832,
+      "sMAPE_pct": 28.0443651326
+    }
+  ],
+  "final_test_improvement_pct": 1.8182146261255794,
+  "data_limitations": [
+    "Google Trends is a relative search-interest index.",
+    "Forecasts are not actual tourist-arrival predictions.",
+    "District/area forecasts use the three-month mean.",
+    "Thirty-five constant series were excluded from CatBoost."
+  ]
+}

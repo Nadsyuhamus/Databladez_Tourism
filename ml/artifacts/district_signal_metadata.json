@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-09-18T03:14:26.812389+00:00",
+  "output_name": "District emerging digital-demand signals",
+  "district_count": 151,
+  "scored_district_count": 116,
+  "digital_signal_weights": {
+    "short_term_signal_score": 0.35,
+    "annual_signal_score": 0.3,
+    "trend_slope_score": 0.2,
+    "projected_change_score": 0.15
+  },
+  "development_context_weights": {
+    "poverty_support_score": 0.4,
+    "low_income_support_score": 0.35,
+    "unemployment_support_score": 0.25
+  },
+  "thresholds": {
+    "high_digital_signal": 65,
+    "high_development_support_context": 60
+  },
+  "signal_quality_rules": {
+    "insufficient_variation": "Fewer than 24 observations or only one unique trend value",
+    "limited_variation": "Exactly two unique trend values",
+    "informative": "At least three unique trend values"
+  },
+  "limitations": [
+    "Google Trends indices are normalized within each series and do not represent visitor counts.",
+    "The digital score measures changes in search interest, not absolute tourism market size.",
+    "The development context score is kept separate from the digital-demand score.",
+    "Socioeconomic indicators use their latest available year and may differ by district.",
+    "Three districts have insufficient socioeconomic coverage for a development-context score.",
+    "Categories are monitoring signals, not causal claims or investment recommendations."
+  ]
+}
