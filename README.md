@@ -455,8 +455,12 @@ The project includes:
 
 ## Team
 
-**Databladez**
-
+**Databladez**  
 *Gliding Across Malaysia*
+
+1. **Faqihah Humaira' Bt. Muhammad Firhat** — Team Leader
+2. **Nurqistina Sofea Bt. Mohd Razif**
+3. **Alia Wajeeha Bt. Khairul Hizam**
+4. **Nur Nadsyuha Bt. Mustafa**
 
 DOSM Datathon 2026
