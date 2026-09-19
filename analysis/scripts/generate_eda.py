@@ -2,7 +2,7 @@
 Generate EDA tables, report, and SVG graphics for the Malaysia tourism datathon.
 
 Usage:
-    python scripts/generate_eda.py \
+    python analysis/scripts/generate_eda.py \
         --input outputs/datathon_cleaned_all_files \
         --output outputs/datathon_eda_github
 
