@@ -26,6 +26,7 @@ export default function StateComparisonChart({
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6">
       {/* Header */}
+
       <div>
         <div className="mb-3 h-1 w-10 rounded-full bg-[#F59E0B]" />
 
@@ -40,8 +41,12 @@ export default function StateComparisonChart({
       </div>
 
       {/* Chart */}
+
       <div className="mt-6 h-[430px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer
+          width="100%"
+          height="100%"
+        >
           <BarChart
             data={data}
             layout="vertical"
@@ -66,7 +71,9 @@ export default function StateComparisonChart({
                 fill: "#64748B",
                 fontSize: 12,
               }}
-              tickFormatter={(value) => `${value}M`}
+              tickFormatter={(value) =>
+                `${value}M`
+              }
             />
 
             <YAxis
@@ -91,8 +98,10 @@ export default function StateComparisonChart({
               ]}
               contentStyle={{
                 borderRadius: "12px",
-                border: "1px solid #E2E8F0",
-                boxShadow: "0 8px 24px rgba(15, 23, 42, 0.08)",
+                border:
+                  "1px solid #E2E8F0",
+                boxShadow:
+                  "0 8px 24px rgba(15, 23, 42, 0.08)",
               }}
             />
 
@@ -101,25 +110,30 @@ export default function StateComparisonChart({
               radius={[0, 6, 6, 0]}
               barSize={26}
             >
-              {data.map((entry, index) => (
-                <Cell
-                  key={`${entry.state}-${index}`}
-                  fill={
-                    entry.state === "Selangor"
-                      ? "#F97316"
-                      : "#1E3A5F"
-                  }
-                />
-              ))}
+              {data.map(
+                (entry, index) => (
+                  <Cell
+                    key={`${entry.state}-${index}`}
+                    fill={
+                      entry.state ===
+                      "Selangor"
+                        ? "#F97316"
+                        : "#1E3A5F"
+                    }
+                  />
+                )
+              )}
             </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
 
       {/* Footer */}
+
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
         <p className="text-xs text-slate-400">
-          Source: Datathon state comparison dataset
+          Source: Department of Statistics Malaysia (DOSM),
+          Domestic Tourism Survey (States) 2025
         </p>
 
         <div className="flex items-center gap-4 text-xs text-slate-500">

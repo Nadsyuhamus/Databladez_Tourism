@@ -28,6 +28,7 @@ export default function TourismTrendChart({
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6">
       {/* Header */}
+
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
         <div>
           <div className="mb-3 h-1 w-10 rounded-full bg-[#F59E0B]" />
@@ -47,8 +48,12 @@ export default function TourismTrendChart({
       </div>
 
       {/* Chart */}
+
       <div className="mt-6 h-80 w-full">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer
+          width="100%"
+          height="100%"
+        >
           <LineChart
             data={data}
             margin={{
@@ -81,7 +86,9 @@ export default function TourismTrendChart({
                 fill: "#64748B",
                 fontSize: 12,
               }}
-              tickFormatter={(value) => `${value}M`}
+              tickFormatter={(value) =>
+                `${value}M`
+              }
             />
 
             <Tooltip
@@ -89,11 +96,15 @@ export default function TourismTrendChart({
                 `${Number(value).toFixed(1)}M`,
                 "Domestic Visitors",
               ]}
-              labelFormatter={(label) => `Year ${label}`}
+              labelFormatter={(label) =>
+                `Year ${label}`
+              }
               contentStyle={{
                 borderRadius: "12px",
-                border: "1px solid #E2E8F0",
-                boxShadow: "0 8px 24px rgba(15, 23, 42, 0.08)",
+                border:
+                  "1px solid #E2E8F0",
+                boxShadow:
+                  "0 8px 24px rgba(15, 23, 42, 0.08)",
               }}
             />
 
@@ -130,9 +141,11 @@ export default function TourismTrendChart({
       </div>
 
       {/* Footer */}
+
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
         <p className="text-xs text-slate-400">
-          Source: Datathon cleaned tourism dataset
+          Source: Department of Statistics Malaysia (DOSM),
+          Domestic Tourism Survey, annual releases
         </p>
 
         <div className="flex items-center gap-2 text-xs text-slate-500">

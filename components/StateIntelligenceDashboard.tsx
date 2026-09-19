@@ -69,7 +69,9 @@ function formatMethod(value: string) {
 }
 
 function formatForecastMonth(value: string) {
-  const [year, month] = value.slice(0, 7).split("-");
+  const [year, month] = value
+    .slice(0, 7)
+    .split("-");
 
   const months = [
     "January",
@@ -142,7 +144,9 @@ function CustomTooltip({
         </p>
 
         <p className="border-t border-slate-100 pt-2 text-xs text-slate-500">
-          {formatDecisionPattern(item.decision_pattern)}
+          {formatDecisionPattern(
+            item.decision_pattern
+          )}
         </p>
       </div>
     </div>
@@ -166,7 +170,8 @@ export default function StateIntelligenceDashboard({
   const selected = useMemo(
     () =>
       sortedData.find(
-        (item) => item.state === selectedState
+        (item) =>
+          item.state === selectedState
       ) ?? sortedData[0],
     [selectedState, sortedData]
   );
@@ -174,17 +179,20 @@ export default function StateIntelligenceDashboard({
   if (!selected) {
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-8">
-        Tourism intelligence data is currently unavailable.
+        Tourism intelligence data is currently
+        unavailable.
       </div>
     );
   }
 
   const selectedScatter = sortedData.filter(
-    (item) => item.state === selected.state
+    (item) =>
+      item.state === selected.state
   );
 
   const otherScatter = sortedData.filter(
-    (item) => item.state !== selected.state
+    (item) =>
+      item.state !== selected.state
   );
 
   return (
@@ -199,14 +207,17 @@ export default function StateIntelligenceDashboard({
             </p>
 
             <p className="mt-1 text-xs text-slate-500">
-              Explore ML-derived state tourism intelligence
+              Explore ML-derived state tourism
+              intelligence
             </p>
           </div>
 
           <select
             value={selectedState}
             onChange={(event) =>
-              setSelectedState(event.target.value)
+              setSelectedState(
+                event.target.value
+              )
             }
             className="min-w-64 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none transition focus:border-[#F59E0B]"
           >
@@ -302,7 +313,8 @@ export default function StateIntelligenceDashboard({
           <p className="mt-1 max-w-3xl text-sm leading-6 text-slate-500">
             Compare relative tourism opportunity and
             monitoring-pressure indicators across
-            Malaysia&apos;s 16 states and federal territories.
+            Malaysia&apos;s 16 states and federal
+            territories.
           </p>
         </div>
 
@@ -387,8 +399,8 @@ export default function StateIntelligenceDashboard({
 
         <div className="mt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-4">
           <p className="text-xs leading-5 text-slate-400">
-            Scores are relative analytical indicators,
-            not probabilities.
+            Scores are relative analytical
+            indicators, not probabilities.
           </p>
 
           <div className="flex gap-4 text-xs text-slate-500">
@@ -437,7 +449,8 @@ export default function StateIntelligenceDashboard({
             <MiniMetric
               label="Change in Points"
               value={`${
-                selected.forecast_change_points > 0
+                selected.forecast_change_points >
+                0
                   ? "+"
                   : ""
               }${selected.forecast_change_points.toFixed(
@@ -465,7 +478,8 @@ export default function StateIntelligenceDashboard({
             </p>
 
             <p className="mt-2 text-xs text-slate-500">
-              Model version: {selected.model_version}
+              Model version:{" "}
+              {selected.model_version}
             </p>
           </div>
         </div>
@@ -481,17 +495,7 @@ export default function StateIntelligenceDashboard({
             What is driving the scores?
           </h3>
 
-          <DriverCard
-            label="Opportunity"
-            value={selected.top_opportunity_driver}
-            tone="opportunity"
-          />
-
-          <DriverCard
-            label="Pressure"
-            value={selected.top_pressure_driver}
-            tone="pressure"
-          />
+          {/* INTERPRETATION NOTE */}
 
           <div className="mt-5 rounded-xl border border-amber-100 bg-[#FFF7E6] p-4">
             <p className="text-sm font-medium text-[#92400E]">
@@ -500,12 +504,31 @@ export default function StateIntelligenceDashboard({
 
             <p className="mt-2 text-xs leading-5 text-[#92400E]">
               Opportunity and pressure are relative
-              composite indicators. They should support
-              comparison and monitoring, not be interpreted
-              as investment return, environmental damage,
-              or probability of tourism success.
+              composite indicators. They should
+              support comparison and monitoring,
+              not be interpreted as investment
+              return, environmental damage, or
+              probability of tourism success.
             </p>
           </div>
+
+          {/* DRIVER CARDS */}
+
+          <DriverCard
+            label="Opportunity"
+            value={
+              selected.top_opportunity_driver
+            }
+            tone="opportunity"
+          />
+
+          <DriverCard
+            label="Pressure"
+            value={
+              selected.top_pressure_driver
+            }
+            tone="pressure"
+          />
         </div>
       </div>
     </div>

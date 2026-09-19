@@ -455,6 +455,27 @@ export default function DistrictIntelligenceDashboard({
           context and data confidence across
           Malaysian districts and areas.
         </p>
+
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-[#FFF7E6] p-5">
+          <p className="text-sm font-semibold text-[#92400E]">
+            How to interpret district signals
+          </p>
+
+          <p className="mt-2 max-w-4xl text-xs leading-6 text-[#92400E]">
+            The digital emerging-signal
+            score compares recent changes
+            within each district&apos;s own
+            Google Trends series. It
+            represents relative momentum,
+            not absolute search-market size
+            or probability of tourism
+            growth. Development Support
+            Context is a separate
+            socioeconomic indicator and
+            should not be interpreted as
+            tourism demand.
+          </p>
+        </div>
       </div>
 
       {/* =========================
@@ -807,12 +828,15 @@ export default function DistrictIntelligenceDashboard({
                 }
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-[#1E3A5F] transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
               >
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">
+                  ←
+                </span>
                 Previous
               </button>
 
               <span className="min-w-24 text-center text-xs font-semibold text-slate-600">
-                Page {safeCurrentPage} of {totalPages}
+                Page {safeCurrentPage} of{" "}
+                {totalPages}
               </span>
 
               <button
@@ -825,7 +849,9 @@ export default function DistrictIntelligenceDashboard({
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-[#1E3A5F] transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Next
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">
+                  →
+                </span>
               </button>
             </div>
           </div>
@@ -847,31 +873,6 @@ export default function DistrictIntelligenceDashboard({
             </div>
           )}
         </div>
-      </div>
-
-      {/* =========================
-          LIMITATION NOTICE
-      ========================== */}
-
-      <div className="mt-6 rounded-2xl border border-amber-200 bg-[#FFF7E6] p-5">
-        <p className="text-sm font-semibold text-[#92400E]">
-          How to interpret district signals
-        </p>
-
-        <p className="mt-2 max-w-4xl text-xs leading-6 text-[#92400E]">
-          The digital emerging-signal
-          score compares recent changes
-          within each district&apos;s own
-          Google Trends series. It
-          represents relative momentum,
-          not absolute search-market size
-          or probability of tourism
-          growth. Development Support
-          Context is a separate
-          socioeconomic indicator and
-          should not be interpreted as
-          tourism demand.
-        </p>
       </div>
     </div>
   );
@@ -1120,12 +1121,14 @@ function ConfidenceBadge({
   confidence: DataConfidence;
 }) {
   const styles = {
-    high: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    high:
+      "bg-emerald-50 text-emerald-700 border-emerald-200",
 
     medium:
       "bg-amber-50 text-amber-700 border-amber-200",
 
-    low: "bg-slate-100 text-slate-600 border-slate-200",
+    low:
+      "bg-slate-100 text-slate-600 border-slate-200",
   };
 
   return (

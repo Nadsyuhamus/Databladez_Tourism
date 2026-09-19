@@ -282,9 +282,7 @@ export default function RecommendationsDashboard({
 
   return (
     <div>
-      {/* ==============================================
-          STATE DECISION SUPPORT
-      ============================================== */}
+      {/* STATE DECISION SUPPORT */}
 
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
@@ -318,9 +316,7 @@ export default function RecommendationsDashboard({
         </div>
       </div>
 
-      {/* ==============================================
-          STATE PROFILE
-      ============================================== */}
+      {/* STATE PROFILE */}
 
       <div className="mt-6 rounded-2xl bg-[#1E3A5F] p-6 text-white">
         <p className="text-xs font-semibold tracking-wider text-[#FBBF24]">
@@ -338,9 +334,7 @@ export default function RecommendationsDashboard({
         </p>
       </div>
 
-      {/* ==============================================
-          SCORE CONTEXT
-      ============================================== */}
+      {/* SCORE CONTEXT */}
 
       <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard
@@ -372,9 +366,7 @@ export default function RecommendationsDashboard({
         />
       </div>
 
-      {/* ==============================================
-          RECOMMENDATION
-      ============================================== */}
+      {/* RECOMMENDATION */}
 
       <div className="mt-6 grid grid-cols-1 gap-4 xl:grid-cols-[1.25fr_0.75fr]">
         <div className="rounded-2xl border border-amber-200 bg-[#FFFCF7] p-6">
@@ -450,9 +442,7 @@ export default function RecommendationsDashboard({
         </div>
       </div>
 
-      {/* ==============================================
-          DISTRICT PRIORITIES
-      ============================================== */}
+      {/* DISTRICT PRIORITIES */}
 
       <div className="mb-6 mt-12">
         <div className="mb-3 flex items-center gap-2">
@@ -474,6 +464,25 @@ export default function RecommendationsDashboard({
           best tourism destinations.
         </p>
       </div>
+
+      {/* LIMITATION — NOW SHOWN BEFORE DISTRICT RESULTS */}
+
+      <div className="mb-6 rounded-2xl border border-amber-200 bg-[#FFFCF7] p-5">
+        <span className="inline-flex rounded-full bg-[#FFF3D6] px-3 py-1 text-[10px] font-bold tracking-wider text-[#92400E]">
+          IMPORTANT LIMITATION
+        </span>
+
+        <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-600">
+          Google Trends is used as a
+          digital-interest proxy. Its index is
+          normalized independently for each series,
+          so these district signals describe
+          relative momentum rather than absolute
+          search volume or confirmed tourist demand.
+        </p>
+      </div>
+
+      {/* DISTRICT RESULTS */}
 
       {priorityDistricts.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -595,25 +604,6 @@ export default function RecommendationsDashboard({
           district signal set.
         </div>
       )}
-
-      {/* ==============================================
-          LIMITATION
-      ============================================== */}
-
-      <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5">
-        <p className="text-sm font-semibold text-[#14263D]">
-          Important limitation
-        </p>
-
-        <p className="mt-2 max-w-4xl text-xs leading-6 text-slate-500">
-          Google Trends is used as a
-          digital-interest proxy. Its index is
-          normalized independently for each series,
-          so these district signals describe
-          relative momentum rather than absolute
-          search volume or confirmed tourist demand.
-        </p>
-      </div>
     </div>
   );
 }
