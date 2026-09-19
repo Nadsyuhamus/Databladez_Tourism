@@ -98,6 +98,8 @@ const CATEGORY_LABELS: Record<
     "Digital Signal Available — Context Incomplete",
 };
 
+const ITEMS_PER_PAGE = 10;
+
 function categoryLabel(
   category: SignalCategory
 ) {
@@ -218,6 +220,9 @@ export default function DistrictIntelligenceDashboard({
     useState<SortOption>(
       "digital_desc"
     );
+
+  const [currentPage, setCurrentPage] =
+    useState(1);
 
   const [
     selectedSeriesId,
@@ -358,10 +363,43 @@ export default function DistrictIntelligenceDashboard({
     ]
   );
 
+  const totalPages = Math.max(
+    1,
+    Math.ceil(
+      filteredData.length /
+        ITEMS_PER_PAGE
+    )
+  );
+
+  const safeCurrentPage = Math.min(
+    currentPage,
+    totalPages
+  );
+
+  const pageStartIndex =
+    (safeCurrentPage - 1) *
+    ITEMS_PER_PAGE;
+
+  const paginatedData =
+    filteredData.slice(
+      pageStartIndex,
+      pageStartIndex + ITEMS_PER_PAGE
+    );
+
+  const showingStart =
+    filteredData.length === 0
+      ? 0
+      : pageStartIndex + 1;
+
+  const showingEnd = Math.min(
+    pageStartIndex + ITEMS_PER_PAGE,
+    filteredData.length
+  );
+
   const selectedDistrict =
     useMemo(() => {
       const selected =
-        data.find(
+        paginatedData.find(
           (item) =>
             item.series_id ===
             selectedSeriesId
@@ -372,14 +410,25 @@ export default function DistrictIntelligenceDashboard({
       }
 
       return (
-        filteredData[0] ??
+        paginatedData[0] ??
         null
       );
     }, [
-      data,
-      filteredData,
+      paginatedData,
       selectedSeriesId,
     ]);
+
+  function goToPreviousPage() {
+    setCurrentPage((page) =>
+      Math.max(1, page - 1)
+    );
+  }
+
+  function goToNextPage() {
+    setCurrentPage((page) =>
+      Math.min(totalPages, page + 1)
+    );
+  }
 
   return (
     <div>
@@ -447,11 +496,12 @@ export default function DistrictIntelligenceDashboard({
           <FilterGroup label="Search">
             <input
               value={search}
-              onChange={(event) =>
+              onChange={(event) => {
                 setSearch(
                   event.target.value
-                )
-              }
+                );
+                setCurrentPage(1);
+              }}
               placeholder="Search district..."
               className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-[#14263D] outline-none transition placeholder:text-slate-400 focus:border-[#F59E0B]"
             />
@@ -460,11 +510,12 @@ export default function DistrictIntelligenceDashboard({
           <FilterGroup label="State">
             <select
               value={stateFilter}
-              onChange={(event) =>
+              onChange={(event) => {
                 setStateFilter(
                   event.target.value
-                )
-              }
+                );
+                setCurrentPage(1);
+              }}
               className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none focus:border-[#F59E0B]"
             >
               <option value="all">
@@ -489,11 +540,12 @@ export default function DistrictIntelligenceDashboard({
               value={
                 categoryFilter
               }
-              onChange={(event) =>
+              onChange={(event) => {
                 setCategoryFilter(
                   event.target.value
-                )
-              }
+                );
+                setCurrentPage(1);
+              }}
               className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none focus:border-[#F59E0B]"
             >
               <option value="all">
@@ -523,11 +575,12 @@ export default function DistrictIntelligenceDashboard({
               value={
                 confidenceFilter
               }
-              onChange={(event) =>
+              onChange={(event) => {
                 setConfidenceFilter(
                   event.target.value
-                )
-              }
+                );
+                setCurrentPage(1);
+              }}
               className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none focus:border-[#F59E0B]"
             >
               <option value="all">
@@ -551,12 +604,13 @@ export default function DistrictIntelligenceDashboard({
           <FilterGroup label="Sort">
             <select
               value={sortBy}
-              onChange={(event) =>
+              onChange={(event) => {
                 setSortBy(
                   event.target
                     .value as SortOption
-                )
-              }
+                );
+                setCurrentPage(1);
+              }}
               className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none focus:border-[#F59E0B]"
             >
               <option value="digital_desc">
@@ -575,9 +629,11 @@ export default function DistrictIntelligenceDashboard({
         </div>
 
         <p className="mt-4 text-xs text-slate-400">
-          Showing{" "}
-          {filteredData.length} of{" "}
-          {data.length} records
+          {filteredData.length} matching{" "}
+          {filteredData.length === 1
+            ? "record"
+            : "records"} of{" "}
+          {data.length} total
         </p>
       </div>
 
@@ -620,7 +676,7 @@ export default function DistrictIntelligenceDashboard({
               </thead>
 
               <tbody>
-                {filteredData.map(
+                {paginatedData.map(
                   (item) => {
                     const isSelected =
                       selectedDistrict?.series_id ===
@@ -733,6 +789,45 @@ export default function DistrictIntelligenceDashboard({
                 )}
               </tbody>
             </table>
+          </div>
+
+          <div className="flex flex-col gap-3 border-t border-slate-100 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs text-slate-500">
+              Showing {showingStart}–{showingEnd} of{" "}
+              {filteredData.length} matching records
+            </p>
+
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={goToPreviousPage}
+                disabled={
+                  safeCurrentPage === 1 ||
+                  filteredData.length === 0
+                }
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-[#1E3A5F] transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                <span aria-hidden="true">←</span>
+                Previous
+              </button>
+
+              <span className="min-w-24 text-center text-xs font-semibold text-slate-600">
+                Page {safeCurrentPage} of {totalPages}
+              </span>
+
+              <button
+                type="button"
+                onClick={goToNextPage}
+                disabled={
+                  safeCurrentPage === totalPages ||
+                  filteredData.length === 0
+                }
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-[#1E3A5F] transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Next
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
           </div>
         </div>
 

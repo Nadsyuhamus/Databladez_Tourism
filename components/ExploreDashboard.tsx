@@ -37,9 +37,20 @@ function formatCurrency(value: number) {
 function formatPercent(value: number | null) {
   if (value === null) return "N/A";
 
-  return `${value > 0 ? "+" : ""}${value.toFixed(
-    1
-  )}%`;
+  return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
+}
+
+function formatClassification(value: string) {
+  return value
+    .replaceAll("_", " ")
+    .split(" ")
+    .filter(Boolean)
+    .map(
+      (word) =>
+        word.charAt(0).toUpperCase() +
+        word.slice(1)
+    )
+    .join(" ");
 }
 
 export default function ExploreDashboard({
@@ -78,17 +89,14 @@ export default function ExploreDashboard({
             </p>
 
             <p className="mt-1 text-xs text-slate-500">
-              Explore state-level tourism
-              indicators
+              Explore state-level tourism indicators
             </p>
           </div>
 
           <select
             value={selectedState}
             onChange={(event) =>
-              setSelectedState(
-                event.target.value
-              )
+              setSelectedState(event.target.value)
             }
             className="min-w-60 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none transition focus:border-[#F59E0B]"
           >
@@ -193,8 +201,7 @@ export default function ExploreDashboard({
         <IndicatorCard
           title="Tourism Intensity"
           value={
-            selectedData.tourismIntensity ===
-            null
+            selectedData.tourismIntensity === null
               ? "N/A"
               : selectedData.tourismIntensity.toFixed(
                   2
@@ -218,8 +225,11 @@ export default function ExploreDashboard({
         <IndicatorCard
           title="Pressure Pattern"
           value={
-            selectedData.pressurePattern ||
-            "Not classified"
+            selectedData.pressurePattern
+              ? formatClassification(
+                  selectedData.pressurePattern
+                )
+              : "Not classified"
           }
           description="Tourism pressure classification"
         />
@@ -233,19 +243,27 @@ export default function ExploreDashboard({
         <InsightPanel
           eyebrow="OPPORTUNITY SIGNAL"
           title={
-            selectedData.opportunityPattern ||
-            "No opportunity classification"
+            selectedData.opportunityPattern
+              ? formatClassification(
+                  selectedData.opportunityPattern
+                )
+              : "No opportunity classification"
           }
           description="Pattern derived from the analytical dataset. Use this alongside visitor, value and demand indicators when assessing tourism development opportunities."
+          tone="opportunity"
         />
 
         <InsightPanel
           eyebrow="PRESSURE SIGNAL"
           title={
-            selectedData.pressurePattern ||
-            "No pressure classification"
+            selectedData.pressurePattern
+              ? formatClassification(
+                  selectedData.pressurePattern
+                )
+              : "No pressure classification"
           }
           description="Highlights the state's tourism pressure pattern. Interpret this together with tourism intensity and visitor growth."
+          tone="pressure"
         />
       </div>
     </div>
@@ -271,7 +289,7 @@ function MetricCard({
         {title}
       </p>
 
-      <p className="mt-2 text-2xl font-bold tracking-tight text-[#14263D]">
+      <p className="mt-2 text-2xl font-bold tracking-tight text-[#D97706]">
         {value}
       </p>
 
@@ -289,15 +307,15 @@ function IndicatorCard({
 }: CardProps) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5">
-      <p className="text-xs font-semibold tracking-wider text-[#F59E0B]">
+      <span className="inline-flex rounded-full bg-[#FFF7E6] px-2.5 py-1 text-[10px] font-bold tracking-wider text-[#B45309]">
         INDICATOR
-      </p>
+      </span>
 
       <h3 className="mt-3 text-sm font-semibold text-[#14263D]">
         {title}
       </h3>
 
-      <p className="mt-3 text-xl font-bold text-[#1E3A5F]">
+      <p className="mt-3 text-xl font-bold text-[#B45309]">
         {value}
       </p>
 
@@ -312,20 +330,43 @@ type InsightPanelProps = {
   eyebrow: string;
   title: string;
   description: string;
+  tone: "opportunity" | "pressure";
 };
 
 function InsightPanel({
   eyebrow,
   title,
   description,
+  tone,
 }: InsightPanelProps) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6">
-      <p className="text-xs font-bold tracking-wider text-[#F59E0B]">
-        {eyebrow}
-      </p>
+  const isOpportunity =
+    tone === "opportunity";
 
-      <h3 className="mt-3 text-xl font-bold text-[#14263D]">
+  return (
+    <div
+      className={
+        isOpportunity
+          ? "rounded-2xl border border-amber-200 bg-[#FFFCF7] p-6"
+          : "rounded-2xl border border-orange-200 bg-[#FFF8F3] p-6"
+      }
+    >
+      <span
+        className={
+          isOpportunity
+            ? "inline-flex rounded-full bg-[#FFF3D6] px-3 py-1 text-[10px] font-bold tracking-wider text-[#92400E]"
+            : "inline-flex rounded-full bg-[#FEECDC] px-3 py-1 text-[10px] font-bold tracking-wider text-[#9A3412]"
+        }
+      >
+        {eyebrow}
+      </span>
+
+      <h3
+        className={
+          isOpportunity
+            ? "mt-4 text-xl font-bold text-[#92400E]"
+            : "mt-4 text-xl font-bold text-[#9A3412]"
+        }
+      >
         {title}
       </h3>
 

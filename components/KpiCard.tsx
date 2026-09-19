@@ -17,7 +17,7 @@ export default function KpiCard({
         {title}
       </p>
 
-      <p className="mt-2 text-2xl font-bold tracking-tight text-[#14263D]">
+      <p className="mt-2 text-2xl font-bold tracking-tight text-[#D97706]">
         {value}
       </p>
 

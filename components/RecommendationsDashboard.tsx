@@ -32,8 +32,10 @@ function statePatternLabel(value: string) {
   const labels: Record<string, string> = {
     emerging_opportunity: "Emerging Opportunity",
     growth_with_pressure: "Growth with Pressure",
-    pressure_monitoring_priority: "Pressure Monitoring Priority",
-    developing_or_early_signal: "Developing / Early Signal",
+    pressure_monitoring_priority:
+      "Pressure Monitoring Priority",
+    developing_or_early_signal:
+      "Developing / Early Signal",
   };
 
   return labels[value] ?? value.replaceAll("_", " ");
@@ -173,14 +175,31 @@ function confidenceStyle(
   confidence: "high" | "medium" | "low"
 ) {
   if (confidence === "high") {
-    return "border-emerald-200 bg-emerald-50 text-emerald-700";
+    return "border-[#CBD5E1] bg-[#EAF0F6] text-[#1E3A5F]";
   }
 
   if (confidence === "medium") {
-    return "border-amber-200 bg-amber-50 text-amber-700";
+    return "border-amber-200 bg-[#FFF7E6] text-[#92400E]";
   }
 
   return "border-slate-200 bg-slate-100 text-slate-600";
+}
+
+function districtSignalStyle(category: string) {
+  if (
+    category ===
+    "emerging_signal_support_priority"
+  ) {
+    return {
+      card: "border-orange-200 bg-[#FFF8F3]",
+      badge: "bg-[#FEECDC] text-[#9A3412]",
+    };
+  }
+
+  return {
+    card: "border-amber-200 bg-[#FFFCF7]",
+    badge: "bg-[#FFF3D6] text-[#92400E]",
+  };
 }
 
 export default function RecommendationsDashboard({
@@ -211,24 +230,33 @@ export default function RecommendationsDashboard({
       districts
         .filter(
           (item) =>
-            item.signal_category ===
+            item.state === selectedState &&
+            (item.signal_category ===
               "emerging_signal_support_priority" ||
-            item.signal_category ===
-              "rising_digital_interest"
+              item.signal_category ===
+                "rising_digital_interest")
         )
         .sort((a, b) => {
           if (
-            a.digital_emerging_signal_score === null &&
-            b.digital_emerging_signal_score === null
+            a.digital_emerging_signal_score ===
+              null &&
+            b.digital_emerging_signal_score ===
+              null
           ) {
             return 0;
           }
 
-          if (a.digital_emerging_signal_score === null) {
+          if (
+            a.digital_emerging_signal_score ===
+            null
+          ) {
             return 1;
           }
 
-          if (b.digital_emerging_signal_score === null) {
+          if (
+            b.digital_emerging_signal_score ===
+            null
+          ) {
             return -1;
           }
 
@@ -238,7 +266,7 @@ export default function RecommendationsDashboard({
           );
         })
         .slice(0, 8),
-    [districts]
+    [districts, selectedState]
   );
 
   if (!selected) {
@@ -254,7 +282,9 @@ export default function RecommendationsDashboard({
 
   return (
     <div>
-      {/* STATE DECISION SUPPORT */}
+      {/* ==============================================
+          STATE DECISION SUPPORT
+      ============================================== */}
 
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
@@ -264,8 +294,8 @@ export default function RecommendationsDashboard({
             </p>
 
             <p className="mt-1 text-xs text-slate-500">
-              Select a state to translate model signals into
-              monitoring guidance
+              Select a state to translate model
+              signals into monitoring guidance
             </p>
           </div>
 
@@ -288,7 +318,9 @@ export default function RecommendationsDashboard({
         </div>
       </div>
 
-      {/* STATE PROFILE */}
+      {/* ==============================================
+          STATE PROFILE
+      ============================================== */}
 
       <div className="mt-6 rounded-2xl bg-[#1E3A5F] p-6 text-white">
         <p className="text-xs font-semibold tracking-wider text-[#FBBF24]">
@@ -306,18 +338,24 @@ export default function RecommendationsDashboard({
         </p>
       </div>
 
-      {/* SCORE CONTEXT */}
+      {/* ==============================================
+          SCORE CONTEXT
+      ============================================== */}
 
       <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard
           title="Opportunity Score"
-          value={selected.opportunity_score.toFixed(1)}
+          value={selected.opportunity_score.toFixed(
+            1
+          )}
           description="Relative composite indicator"
         />
 
         <MetricCard
           title="Pressure Score"
-          value={selected.pressure_score.toFixed(1)}
+          value={selected.pressure_score.toFixed(
+            1
+          )}
           description="Relative monitoring-pressure indicator"
         />
 
@@ -334,15 +372,17 @@ export default function RecommendationsDashboard({
         />
       </div>
 
-      {/* RECOMMENDATION */}
+      {/* ==============================================
+          RECOMMENDATION
+      ============================================== */}
 
       <div className="mt-6 grid grid-cols-1 gap-4 xl:grid-cols-[1.25fr_0.75fr]">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <p className="text-xs font-bold tracking-wider text-[#F59E0B]">
+        <div className="rounded-2xl border border-amber-200 bg-[#FFFCF7] p-6">
+          <span className="inline-flex rounded-full bg-[#FFF3D6] px-3 py-1 text-[10px] font-bold tracking-wider text-[#92400E]">
             SUGGESTED DECISION DIRECTION
-          </p>
+          </span>
 
-          <h3 className="mt-3 text-2xl font-bold text-[#14263D]">
+          <h3 className="mt-4 text-2xl font-bold text-[#14263D]">
             {stateRecommendation.action}
           </h3>
 
@@ -350,7 +390,7 @@ export default function RecommendationsDashboard({
             {stateRecommendation.explanation}
           </p>
 
-          <div className="mt-6 rounded-xl bg-slate-50 p-5">
+          <div className="mt-6 rounded-xl border border-amber-100 bg-white/70 p-5">
             <p className="text-xs font-semibold text-slate-500">
               Evidence to review
             </p>
@@ -358,12 +398,16 @@ export default function RecommendationsDashboard({
             <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <EvidenceItem
                 title="Opportunity driver"
-                value={selected.top_opportunity_driver}
+                value={
+                  selected.top_opportunity_driver
+                }
               />
 
               <EvidenceItem
                 title="Pressure driver"
-                value={selected.top_pressure_driver}
+                value={
+                  selected.top_pressure_driver
+                }
               />
 
               <EvidenceItem
@@ -383,26 +427,32 @@ export default function RecommendationsDashboard({
           </div>
         </div>
 
-        <div className="rounded-2xl border border-amber-200 bg-[#FFF7E6] p-6">
-          <p className="text-xs font-bold tracking-wider text-[#92400E]">
+        <div className="rounded-2xl border border-orange-200 bg-[#FFF8F3] p-6">
+          <span className="inline-flex rounded-full bg-[#FEECDC] px-3 py-1 text-[10px] font-bold tracking-wider text-[#9A3412]">
             INTERPRETATION
-          </p>
+          </span>
 
-          <h3 className="mt-3 text-lg font-bold text-[#92400E]">
-            Decision support, not an automatic policy decision
+          <h3 className="mt-4 text-lg font-bold text-[#9A3412]">
+            Decision support, not an automatic
+            policy decision
           </h3>
 
-          <p className="mt-3 text-sm leading-7 text-[#92400E]">
-            These recommendations are interface-level guidance
-            derived from the supplied classification and leading
-            drivers. The scores are relative indicators and should
-            be combined with local capacity, infrastructure,
-            environmental and stakeholder evidence before action.
+          <p className="mt-3 text-sm leading-7 text-[#9A3412]">
+            These recommendations are
+            interface-level guidance derived from
+            the supplied classification and leading
+            drivers. The scores are relative
+            indicators and should be combined with
+            local capacity, infrastructure,
+            environmental and stakeholder evidence
+            before action.
           </p>
         </div>
       </div>
 
-      {/* DISTRICT PRIORITIES */}
+      {/* ==============================================
+          DISTRICT PRIORITIES
+      ============================================== */}
 
       <div className="mb-6 mt-12">
         <div className="mb-3 flex items-center gap-2">
@@ -418,107 +468,137 @@ export default function RecommendationsDashboard({
         </h2>
 
         <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-500">
-          Districts with emerging digital signals are surfaced for
-          further investigation, not ranked as the best tourism
-          destinations.
+          Districts in {selected.state} with
+          emerging digital signals are surfaced for
+          further investigation, not ranked as the
+          best tourism destinations.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        {priorityDistricts.map((district) => {
-          const guidance =
-            districtGuidance(
-              district.signal_category
-            );
-
-          return (
-            <div
-              key={district.series_id}
-              className="rounded-2xl border border-slate-200 bg-white p-6"
-            >
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs font-bold tracking-wider text-[#F59E0B]">
-                    {district.state}
-                  </p>
-
-                  <h3 className="mt-2 text-xl font-bold text-[#14263D]">
-                    {district.canonical_district}
-                  </h3>
-                </div>
-
-                <span
-                  className={`rounded-full border px-3 py-1 text-xs font-medium ${confidenceStyle(
-                    district.data_confidence
-                  )}`}
-                >
-                  {district.data_confidence
-                    .charAt(0)
-                    .toUpperCase() +
-                    district.data_confidence.slice(1)}{" "}
-                  confidence
-                </span>
-              </div>
-
-              <p className="mt-4 text-sm font-semibold text-[#1E3A5F]">
-                {districtCategoryLabel(
+      {priorityDistricts.length > 0 ? (
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          {priorityDistricts.map(
+            (district) => {
+              const guidance =
+                districtGuidance(
                   district.signal_category
-                )}
-              </p>
+                );
 
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                <EvidenceItem
-                  title="Digital signal"
-                  value={
-                    district.digital_emerging_signal_score ===
-                    null
-                      ? "Unavailable"
-                      : district.digital_emerging_signal_score.toFixed(
+              const signalStyle =
+                districtSignalStyle(
+                  district.signal_category
+                );
+
+              return (
+                <div
+                  key={district.series_id}
+                  className={`rounded-2xl border p-6 ${signalStyle.card}`}
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-bold tracking-wider text-[#F59E0B]">
+                        {district.state}
+                      </p>
+
+                      <h3 className="mt-2 text-xl font-bold text-[#14263D]">
+                        {
+                          district.canonical_district
+                        }
+                      </h3>
+                    </div>
+
+                    <span
+                      className={`rounded-full border px-3 py-1 text-xs font-medium ${confidenceStyle(
+                        district.data_confidence
+                      )}`}
+                    >
+                      {district.data_confidence
+                        .charAt(0)
+                        .toUpperCase() +
+                        district.data_confidence.slice(
                           1
-                        )
-                  }
-                />
+                        )}{" "}
+                      confidence
+                    </span>
+                  </div>
 
-                <EvidenceItem
-                  title="Development context"
-                  value={
-                    district.development_support_context_score ===
-                    null
-                      ? "Unavailable"
-                      : district.development_support_context_score.toFixed(
-                          1
-                        )
-                  }
-                />
-              </div>
+                  <span
+                    className={`mt-4 inline-flex rounded-full px-3 py-1 text-xs font-semibold ${signalStyle.badge}`}
+                  >
+                    {districtCategoryLabel(
+                      district.signal_category
+                    )}
+                  </span>
 
-              <div className="mt-5 border-t border-slate-100 pt-5">
-                <p className="text-xs font-semibold text-slate-500">
-                  Suggested direction
-                </p>
+                  <div className="mt-4 grid grid-cols-2 gap-3">
+                    <EvidenceItem
+                      title="Digital signal"
+                      value={
+                        district.digital_emerging_signal_score ===
+                        null
+                          ? "Unavailable"
+                          : district.digital_emerging_signal_score.toFixed(
+                              1
+                            )
+                      }
+                    />
 
-                <p className="mt-2 font-semibold text-[#14263D]">
-                  {guidance.action}
-                </p>
+                    <EvidenceItem
+                      title="Development context"
+                      value={
+                        district.development_support_context_score ===
+                        null
+                          ? "Unavailable"
+                          : district.development_support_context_score.toFixed(
+                              1
+                            )
+                      }
+                    />
+                  </div>
 
-                <p className="mt-2 text-sm leading-6 text-slate-500">
-                  {guidance.explanation}
-                </p>
-              </div>
+                  <div className="mt-5 border-t border-slate-100 pt-5">
+                    <p className="text-xs font-semibold text-slate-500">
+                      Suggested direction
+                    </p>
 
-              <div className="mt-4 rounded-xl bg-slate-50 p-4">
-                <p className="text-xs text-slate-500">
-                  Leading signal components
-                </p>
+                    <p className="mt-2 font-semibold text-[#14263D]">
+                      {guidance.action}
+                    </p>
 
-                <p className="mt-2 text-sm font-medium text-[#14263D]">
-                  {district.leading_signal_components}
-                </p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">
+                      {guidance.explanation}
+                    </p>
+                  </div>
+
+                  <div className="mt-4 rounded-xl border border-white/80 bg-white/70 p-4">
+                    <p className="text-xs text-slate-500">
+                      Leading signal components
+                    </p>
+
+                    <p className="mt-2 text-sm font-medium text-[#14263D]">
+                      {
+                        district.leading_signal_components
+                      }
+                    </p>
+                  </div>
+                </div>
+              );
+            }
+          )}
+        </div>
+      ) : (
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-sm text-slate-500">
+          No rising-digital-interest or
+          support-priority district signals are
+          currently available for {selected.state}.
+          Review the AI Insights page for the full
+          district signal set.
+        </div>
+      )}
+
+      {/* ==============================================
+          LIMITATION
+      ============================================== */}
 
       <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5">
         <p className="text-sm font-semibold text-[#14263D]">
@@ -526,10 +606,12 @@ export default function RecommendationsDashboard({
         </p>
 
         <p className="mt-2 max-w-4xl text-xs leading-6 text-slate-500">
-          Google Trends is used as a digital-interest proxy. Its
-          index is normalized independently for each series, so
-          these district signals describe relative momentum rather
-          than absolute search volume or confirmed tourist demand.
+          Google Trends is used as a
+          digital-interest proxy. Its index is
+          normalized independently for each series,
+          so these district signals describe
+          relative momentum rather than absolute
+          search volume or confirmed tourist demand.
         </p>
       </div>
     </div>
@@ -553,7 +635,7 @@ function MetricCard({
         {title}
       </p>
 
-      <p className="mt-2 text-xl font-bold capitalize text-[#14263D]">
+      <p className="mt-2 text-xl font-bold capitalize text-[#D97706]">
         {value}
       </p>
 

@@ -54,9 +54,9 @@ export default function Sidebar() {
 
         <div className="mt-auto border-t border-slate-100 pt-5">
           <p className="text-xs leading-5 text-slate-400">
-            Sustainable Tourism
+            Sustainable Tourism Intelligence
             <br />
-            Malaysia Datathon 2026
+            DOSM Datathon 2026
           </p>
         </div>
       </aside>
@@ -82,8 +82,8 @@ export default function Sidebar() {
             Databladez
           </p>
 
-          <p className="text-[10px] text-slate-400">
-            Tourism Intelligence
+          <p className="text-[10px] font-medium tracking-wide text-slate-400">
+            Gliding Across Malaysia
           </p>
         </div>
       </div>
@@ -128,9 +128,9 @@ export default function Sidebar() {
 
             <div className="mt-auto border-t border-slate-100 pt-5">
               <p className="text-xs leading-5 text-slate-400">
-                Sustainable Tourism
+                Sustainable Tourism Intelligence
                 <br />
-                Malaysia Datathon 2026
+                DOSM Datathon 2026
               </p>
             </div>
           </aside>
@@ -143,20 +143,62 @@ export default function Sidebar() {
 function Brand() {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#1E3A5F] font-bold text-white">
-        D
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1E3A5F] shadow-sm">
+        <RollerbladeMark />
       </div>
 
-      <div>
-        <h1 className="text-xl font-bold text-[#1E3A5F]">
+      <div className="min-w-0">
+        <h1 className="text-xl font-bold leading-tight text-[#1E3A5F]">
           Databladez
         </h1>
 
-        <p className="text-xs text-slate-500">
-          Tourism Intelligence
+        <p className="mt-0.5 whitespace-nowrap text-[11px] font-medium tracking-wide text-slate-500">
+          Gliding Across Malaysia
         </p>
       </div>
     </div>
+  );
+}
+
+function RollerbladeMark() {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      aria-hidden="true"
+      className="h-8 w-8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 12h18c3.5 0 6.5 2.4 7.3 5.8l4.2 17.2H20.2L15 20.5A6.3 6.3 0 0 1 18 12Z"
+        fill="white"
+      />
+      <path
+        d="M17.5 35h32.2c2.2 0 4.1 1.8 4.1 4.1v2.3H14v-3.2c0-1.8 1.5-3.2 3.5-3.2Z"
+        fill="#F59E0B"
+      />
+      <path
+        d="M21 19h17"
+        stroke="#1E3A5F"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M26 12v12"
+        stroke="#1E3A5F"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M34 12v12"
+        stroke="#1E3A5F"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
+      <circle cx="22" cy="48" r="4.5" fill="white" />
+      <circle cx="34" cy="48" r="4.5" fill="white" />
+      <circle cx="46" cy="48" r="4.5" fill="white" />
+    </svg>
   );
 }
 

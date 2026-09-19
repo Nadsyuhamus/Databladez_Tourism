@@ -51,8 +51,10 @@ function formatDecisionPattern(value: string) {
   const labels: Record<string, string> = {
     emerging_opportunity: "Emerging Opportunity",
     growth_with_pressure: "Growth with Pressure",
-    pressure_monitoring_priority: "Pressure Monitoring Priority",
-    developing_or_early_signal: "Developing / Early Signal",
+    pressure_monitoring_priority:
+      "Pressure Monitoring Priority",
+    developing_or_early_signal:
+      "Developing / Early Signal",
   };
 
   return labels[value] ?? value.replaceAll("_", " ");
@@ -127,14 +129,14 @@ function CustomTooltip({
       <div className="mt-3 space-y-2 text-sm">
         <p className="text-slate-500">
           Opportunity:
-          <span className="ml-2 font-semibold text-[#1E3A5F]">
+          <span className="ml-2 font-semibold text-[#B45309]">
             {formatScore(item.opportunity_score)}
           </span>
         </p>
 
         <p className="text-slate-500">
           Pressure:
-          <span className="ml-2 font-semibold text-[#1E3A5F]">
+          <span className="ml-2 font-semibold text-[#9A3412]">
             {formatScore(item.pressure_score)}
           </span>
         </p>
@@ -298,9 +300,9 @@ export default function StateIntelligenceDashboard({
           </h3>
 
           <p className="mt-1 max-w-3xl text-sm leading-6 text-slate-500">
-            Compare relative tourism opportunity and monitoring-pressure
-            indicators across Malaysia&apos;s 16 states and federal
-            territories.
+            Compare relative tourism opportunity and
+            monitoring-pressure indicators across
+            Malaysia&apos;s 16 states and federal territories.
           </p>
         </div>
 
@@ -385,7 +387,8 @@ export default function StateIntelligenceDashboard({
 
         <div className="mt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-4">
           <p className="text-xs leading-5 text-slate-400">
-            Scores are relative analytical indicators, not probabilities.
+            Scores are relative analytical indicators,
+            not probabilities.
           </p>
 
           <div className="flex gap-4 text-xs text-slate-500">
@@ -405,12 +408,14 @@ export default function StateIntelligenceDashboard({
       {/* FORECAST + DRIVERS */}
 
       <div className="mt-6 grid grid-cols-1 gap-4 xl:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <p className="text-xs font-bold tracking-wider text-[#F59E0B]">
-            NEXT-MONTH DIGITAL INTEREST
-          </p>
+        {/* FORECAST */}
 
-          <h3 className="mt-3 text-xl font-bold text-[#14263D]">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <span className="inline-flex rounded-full bg-[#FFF7E6] px-3 py-1 text-[10px] font-bold tracking-wider text-[#B45309]">
+            NEXT-MONTH DIGITAL INTEREST
+          </span>
+
+          <h3 className="mt-4 text-xl font-bold text-[#14263D]">
             Search Interest Forecast
           </h3>
 
@@ -431,7 +436,11 @@ export default function StateIntelligenceDashboard({
 
             <MiniMetric
               label="Change in Points"
-              value={`${selected.forecast_change_points > 0 ? "+" : ""}${selected.forecast_change_points.toFixed(
+              value={`${
+                selected.forecast_change_points > 0
+                  ? "+"
+                  : ""
+              }${selected.forecast_change_points.toFixed(
                 1
               )}`}
             />
@@ -444,7 +453,7 @@ export default function StateIntelligenceDashboard({
             />
           </div>
 
-          <div className="mt-5 rounded-xl bg-slate-50 p-4">
+          <div className="mt-5 rounded-xl border border-slate-100 bg-slate-50 p-4">
             <p className="text-xs font-semibold text-slate-500">
               Forecast method
             </p>
@@ -461,23 +470,27 @@ export default function StateIntelligenceDashboard({
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <p className="text-xs font-bold tracking-wider text-[#F59E0B]">
-            LEADING DRIVERS
-          </p>
+        {/* DRIVERS */}
 
-          <h3 className="mt-3 text-xl font-bold text-[#14263D]">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <span className="inline-flex rounded-full bg-[#FFF7E6] px-3 py-1 text-[10px] font-bold tracking-wider text-[#B45309]">
+            LEADING DRIVERS
+          </span>
+
+          <h3 className="mt-4 text-xl font-bold text-[#14263D]">
             What is driving the scores?
           </h3>
 
           <DriverCard
             label="Opportunity"
             value={selected.top_opportunity_driver}
+            tone="opportunity"
           />
 
           <DriverCard
             label="Pressure"
             value={selected.top_pressure_driver}
+            tone="pressure"
           />
 
           <div className="mt-5 rounded-xl border border-amber-100 bg-[#FFF7E6] p-4">
@@ -486,10 +499,11 @@ export default function StateIntelligenceDashboard({
             </p>
 
             <p className="mt-2 text-xs leading-5 text-[#92400E]">
-              Opportunity and pressure are relative composite indicators.
-              They should support comparison and monitoring, not be interpreted
-              as investment return, environmental damage, or probability of
-              tourism success.
+              Opportunity and pressure are relative
+              composite indicators. They should support
+              comparison and monitoring, not be interpreted
+              as investment return, environmental damage,
+              or probability of tourism success.
             </p>
           </div>
         </div>
@@ -517,7 +531,7 @@ function ScoreCard({
         {title}
       </p>
 
-      <p className="mt-2 text-2xl font-bold text-[#14263D]">
+      <p className="mt-2 text-2xl font-bold text-[#D97706]">
         {value}
       </p>
 
@@ -538,12 +552,12 @@ function MiniMetric({
   value,
 }: MiniMetricProps) {
   return (
-    <div className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+    <div className="rounded-xl border border-amber-100 bg-[#FFFCF7] p-4">
       <p className="text-xs text-slate-500">
         {label}
       </p>
 
-      <p className="mt-2 text-lg font-bold text-[#1E3A5F]">
+      <p className="mt-2 text-lg font-bold text-[#B45309]">
         {value}
       </p>
     </div>
@@ -553,19 +567,42 @@ function MiniMetric({
 type DriverCardProps = {
   label: string;
   value: string;
+  tone: "opportunity" | "pressure";
 };
 
 function DriverCard({
   label,
   value,
+  tone,
 }: DriverCardProps) {
-  return (
-    <div className="mt-4 rounded-xl border border-slate-200 p-4">
-      <p className="text-xs font-semibold text-slate-500">
-        {label} driver
-      </p>
+  const isOpportunity =
+    tone === "opportunity";
 
-      <p className="mt-2 text-lg font-semibold capitalize text-[#1E3A5F]">
+  return (
+    <div
+      className={
+        isOpportunity
+          ? "mt-4 rounded-xl border border-amber-200 bg-[#FFFCF7] p-4"
+          : "mt-4 rounded-xl border border-orange-200 bg-[#FFF8F3] p-4"
+      }
+    >
+      <span
+        className={
+          isOpportunity
+            ? "inline-flex rounded-full bg-[#FFF3D6] px-2.5 py-1 text-[10px] font-bold tracking-wider text-[#92400E]"
+            : "inline-flex rounded-full bg-[#FEECDC] px-2.5 py-1 text-[10px] font-bold tracking-wider text-[#9A3412]"
+        }
+      >
+        {label.toUpperCase()} DRIVER
+      </span>
+
+      <p
+        className={
+          isOpportunity
+            ? "mt-3 text-lg font-semibold capitalize text-[#92400E]"
+            : "mt-3 text-lg font-semibold capitalize text-[#9A3412]"
+        }
+      >
         {value}
       </p>
     </div>
