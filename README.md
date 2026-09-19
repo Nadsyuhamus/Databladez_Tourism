@@ -1,271 +1,350 @@
-# Databladez — Sustainable Tourism Intelligence
+# Databladez
 
-An interactive tourism intelligence and decision-support dashboard developed for **DOSM Datathon 2026**.
+### Gliding Across Malaysia
 
-**Theme:** Leveraging Machine Learning (ML) & Artificial Intelligence (AI) for sustainable tourism in Malaysia.
+**Sustainable Tourism Intelligence Dashboard for DOSM Datathon 2026**
 
-## Live Dashboard
+Databladez is an interactive tourism intelligence dashboard designed to support the exploration of Malaysia's domestic tourism performance, digital-interest trends, state-level tourism signals, and emerging district-level opportunities.
 
-**https://databladez-tourism.vercel.app/**
+🔗 **Live Dashboard:** https://databladez-tourism.vercel.app/
+
+---
 
 ## Overview
 
-Databladez transforms Malaysian tourism indicators, socioeconomic context, digital-interest signals and precomputed machine-learning outputs into an interactive dashboard for sustainable tourism analysis and decision support.
+Databladez combines Malaysian tourism indicators with digital-interest signals and precomputed machine-learning outputs to provide a clear view of tourism activity across Malaysia.
 
-The project provides four main dashboard experiences:
+The dashboard is designed around four main questions:
 
-- **Overview** — national tourism performance
-- **Explore** — interactive state-level tourism analysis
-- **AI Insights** — state tourism intelligence and district emerging signals
-- **Recommendations** — evidence-based decision-support guidance
+- How is domestic tourism performing nationally?
+- How do Malaysian states compare across tourism indicators?
+- What do the latest opportunity, pressure, and digital-interest signals suggest?
+- Which districts show emerging tourism-related digital momentum that may warrant further review?
+
+The system is intended as a **decision-support and monitoring tool**, not as an automated investment or destination-ranking system.
+
+---
 
 ## Dashboard Pages
 
 ### 1. Overview
 
-Route:
+Provides a national-level summary of Malaysian domestic tourism.
 
-```text
-/
-```
+Key elements include:
 
-The Overview page presents a national tourism snapshot including:
-
-- Domestic visitor volume
+- Domestic visitor totals
 - Tourism receipts
-- Leading state by domestic visitor volume
-- Malaysian regional coverage
-- Domestic tourism trend
-- State visitor comparison
+- Top state by domestic visitors
+- National tourism trend from 2019–2025
+- Comparison of leading states by domestic visitor volume
 
 ---
 
 ### 2. Explore
 
-Route:
+Allows users to select a Malaysian state and examine its tourism profile.
 
-```text
-/explore
-```
-
-The Explore page allows users to select a Malaysian state or Federal Territory and review:
+Indicators include:
 
 - Domestic visitors
 - Tourism receipts
 - Spending per visitor
 - Tourism growth
 - Tourism intensity
-- Google Search Interest
+- Google Search interest
 - Opportunity pattern
 - Pressure pattern
-
-The **Visitor Volume vs Tourism Value** visualization compares states using domestic visitor volume and spending per visitor.
-
-The selected state is highlighted for easier comparison.
+- State comparison visualization
 
 ---
 
 ### 3. AI Insights
 
-Route:
+Presents the analytical and machine-learning outputs developed for the project.
 
-```text
-/ai-insights
-```
+#### State Intelligence
 
-The AI Insights page contains two analytical sections.
+Includes:
 
-#### State Tourism Intelligence
-
-Users can select a state and review:
-
-- Opportunity Score
-- Pressure Score
-- Forecast Search Interest Index
-- Forecast momentum
-- Opportunity vs Tourism Pressure position
+- Tourism opportunity score
+- Tourism pressure score
+- Opportunity versus pressure comparison
+- Next-month search-interest forecast
+- Forecast direction and change
+- Forecast method
 - Leading opportunity driver
 - Leading pressure driver
 
 #### District Emerging Signals
 
-Users can:
+Includes:
 
-- Search for districts
-- Filter by state
-- Filter by signal category
-- Filter by confidence
-- Sort district records
-- Select districts for detailed information
-
-District-level information may include:
-
-- Digital Emerging-Signal Score
+- Searchable district table
+- State filtering
+- Signal-category filtering
+- Confidence filtering
+- Sorting by digital signal and development context
+- Pagination
+- District-level detail panel
+- Digital emerging-signal score
 - Development Support Context
-- Forecast Search Interest Index
-- Short-term change
-- Annual change
-- Projected change
-- Signal quality
-- Data confidence
-- Leading signal components
+- Data-confidence classification
+- Signal-quality information
 
 ---
 
 ### 4. Recommendations
 
-Route:
+Translates state and district signals into structured tourism-planning guidance.
+
+The page provides:
+
+- State-level decision pattern
+- Opportunity and pressure indicators
+- Suggested monitoring or development direction
+- Leading evidence
+- Relevant district signals for the selected state
+- Confidence-aware district recommendations
+
+Recommendations should be interpreted together with local feasibility, infrastructure, stakeholder knowledge, and other supporting evidence.
+
+---
+
+## Machine Learning and Analytics
+
+The machine-learning pipeline was developed separately from the frontend and exported as precomputed outputs.
+
+Primary ML output files include:
 
 ```text
-/recommendations
+ml/outputs/demand_forecast_latest.json
+ml/outputs/state_tourism_intelligence_latest.json
+ml/outputs/district_emerging_signals_latest.json
 ```
 
-The Recommendations page converts supplied tourism-intelligence classifications and analytical drivers into decision-support guidance.
+The dashboard does not run CatBoost inference in the browser.
 
-It also surfaces relevant district signals that may warrant further monitoring or investigation.
+The frontend presents the supplied outputs without recalculating or altering the ML scores.
 
-The recommendations are intended to support analysis rather than replace detailed feasibility studies, stakeholder consultation, policy assessment or investment due diligence.
+### Forecasting
 
-## Technology Stack
-
-- **Next.js 16.3.5**
-- **TypeScript**
-- **Tailwind CSS**
-- **Recharts**
-- **Papa Parse**
-- **Git / GitHub**
-- **Vercel**
-
-Exact package versions are recorded in:
+State-level search-interest forecasts use a segmented hybrid forecasting approach that may include:
 
 ```text
-package.json
-package-lock.json
+Three-month mean + CatBoost residual correction
 ```
 
-## Data and ML Integration
+The forecast represents the **next-month Google Trends / search-interest index**.
 
-The frontend consumes cleaned analytical data and precomputed machine-learning outputs stored in the repository.
+It does **not** represent:
 
-### Analytical Data
-
-Main analytical files are located under:
-
-```text
-datathon_final_package/
-```
-
-Supporting files include:
-
-```text
-datathon_final_package/chart_data/
-datathon_final_package/cleaned_data.csv
-datathon_final_package/data_dictionary.csv
-datathon_final_package/definitions.txt
-datathon_final_package/summary_metrics.json
-```
-
-### Machine-Learning Outputs
-
-Main ML outputs are located under:
-
-```text
-ml/outputs/
-```
-
-Relevant outputs include:
-
-```text
-demand_forecast_latest.json
-state_tourism_intelligence_latest.json
-district_emerging_signals_latest.json
-```
-
-Supporting ML documentation is available in:
-
-```text
-ml/DEVELOPER_HANDOFF.md
-ml/README.md
-```
-
-The browser does **not** execute the trained ML model directly.
-
-Forecasts, scores and classifications are generated offline and integrated into the dashboard as precomputed outputs.
-
-## Interpretation Notes
-
-### Forecast Search Interest
-
-The forecast shown in the dashboard represents a **next-month Google Trends / digital search-interest index**.
-
-It is **not** a forecast of:
-
-- Tourist arrivals
-- Visitor counts
-- Tourism receipts
+- Predicted tourist arrivals
+- Tourism revenue forecasts
 - Hotel occupancy
+- Probability of tourism growth
+- Guaranteed tourism demand
+
+---
+
+## Important Interpretation Notes
 
 ### Opportunity Score
 
-The Opportunity Score is a relative composite analytical indicator used to compare tourism-development signals across Malaysian states.
+The state Opportunity Score is a **relative composite indicator** used to compare tourism-related signals across Malaysian states.
 
-It should not be interpreted as:
+A higher score should not be interpreted as:
 
 - Investment return
-- Probability of success
-- Guaranteed tourism growth
-- Predicted tourism revenue
+- Revenue potential
+- Probability of tourism success
+- Destination quality
 - Automatic funding priority
 
 ### Pressure Score
 
-The Pressure Score represents relative tourism monitoring pressure.
+The Pressure Score represents **relative tourism monitoring pressure**.
 
-It does not directly measure:
+It is not a direct measurement of:
 
 - Environmental damage
 - Carbon emissions
-- Waste generation
 - Ecological degradation
-- Tourist dissatisfaction
+- Tourism carrying capacity
 
-### District Digital Signals
+### Google Trends
 
-Google Trends district series are independently normalized.
+Google Trends is used as a **digital-interest proxy**.
 
-District digital indicators therefore describe relative change and momentum within each district series rather than absolute search-market size between districts.
+Google Trends series are independently normalized, meaning raw index values should not be interpreted as absolute search volume across different districts.
+
+District emerging-signal scores describe **relative momentum within the available digital series**.
+
+They do not represent a probability of tourism growth.
 
 ### Development Support Context
 
-Development Support Context represents relative socioeconomic support needs.
+Development Support Context is a separate socioeconomic indicator.
 
-A higher value does not automatically mean higher tourism demand, greater tourism opportunity or stronger investment potential.
+A higher development-context score does **not** automatically imply:
 
-### Missing District Scores
+- Higher tourism demand
+- Greater tourism opportunity
+- Higher investment potential
 
-Some district records contain insufficient digital variation for a reliable Digital Emerging-Signal Score.
+It should be considered separately from digital tourism-interest signals.
 
-These records are displayed as:
+### Missing Values
+
+Where a digital score cannot be calculated reliably, the dashboard displays:
 
 ```text
 Unavailable
 ```
 
-They are intentionally not converted to zero.
+Missing values are not converted to zero.
 
-## Known Limitations
+---
 
-- District-level tourism visitor counts are not available in the current analytical dataset.
-- District analysis therefore uses digital-interest and socioeconomic context rather than direct district visitor counts.
-- No district geometry or latitude/longitude data were available in the analytical package for a reliable district-level map.
-- Google Trends is used as a digital-interest proxy and does not represent confirmed tourist demand.
-- Google Trends indices from separate district series cannot be interpreted as absolute search-volume comparisons.
-- Some district records contain insufficient digital variation for a reliable Digital Emerging-Signal Score.
-- Socioeconomic reference years may vary depending on available source data.
-- ML outputs are precomputed rather than generated through live browser inference.
-- Composite indicators should be interpreted together with their underlying drivers and local context.
+## Data Coverage
 
-## Running Locally
+The analytical outputs cover:
+
+| Output | Coverage |
+|---|---:|
+| Malaysian state series | 16 |
+| District / area series | 151 |
+| Total forecast series | 167 |
+| Districts with digital scores | 116 |
+| Constant / unscored districts | 35 |
+| Districts with usable development context | 148 |
+
+District confidence levels are displayed as:
+
+```text
+High
+Medium
+Low
+```
+
+Confidence labels are provided for district-level signals only.
+
+---
+
+## Data Sources
+
+The project uses authentic Malaysian tourism and supporting data prepared for DOSM Datathon 2026.
+
+Key sources include:
+
+- **Department of Statistics Malaysia (DOSM)**
+  - Domestic Tourism Survey
+  - Domestic Tourism Survey (States) 2025
+- **Google Trends**
+  - Used as a digital-interest proxy
+- Supporting Malaysian socioeconomic datasets included in the project's cleaned analytical datasets
+
+Processed and cleaned datasets used by the dashboard are stored within the repository.
+
+Exact dataset provenance, transformations, assumptions, and references should be read together with the project report and reproducibility materials.
+
+---
+
+## Technology Stack
+
+### Frontend
+
+- Next.js 16.3.5
+- React
+- TypeScript
+- Tailwind CSS
+- Recharts
+- PapaParse
+
+### Analytics and Machine Learning
+
+- Python
+- Jupyter Notebook
+- CatBoost
+- Pandas
+- NumPy
+- Statistical and exploratory data analysis
+
+### Deployment
+
+- Vercel
+- GitHub
+
+---
+
+## Project Structure
+
+```text
+Databladez_Tourism/
+│
+├── analysis/
+│   ├── notebooks/
+│   │   ├── 01_data_audit.ipynb
+│   │   └── 04_district_intelligence.ipynb
+│   ├── scripts/
+│   │   └── generate_eda.py
+│   └── outputs/
+│       ├── datathon_cleaned_all_files/
+│       └── datathon_eda_github/
+│
+├── app/
+│   ├── ai-insights/
+│   ├── explore/
+│   ├── recommendations/
+│   ├── icon.svg
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/
+│   ├── DistrictIntelligenceDashboard.tsx
+│   ├── ExploreDashboard.tsx
+│   ├── KpiCard.tsx
+│   ├── RecommendationsDashboard.tsx
+│   ├── Sidebar.tsx
+│   ├── StateComparisonChart.tsx
+│   ├── StateIntelligenceDashboard.tsx
+│   ├── StateValueScatter.tsx
+│   └── TourismTrendChart.tsx
+│
+├── datathon_final_package/
+│   ├── chart_data/
+│   └── summary_metrics.json
+│
+├── ml/
+│   ├── artifacts/
+│   └── outputs/
+│
+├── public/
+│
+├── AGENTS.md
+├── CLAUDE.md
+├── README.md
+├── README.txt
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+└── tsconfig.json
+```
+
+---
+
+## Run Locally
+
+### Requirements
+
+Install:
+
+- Node.js
+- npm
 
 Clone the repository:
 
@@ -297,6 +376,8 @@ Open:
 http://localhost:3000
 ```
 
+---
+
 ## Production Build
 
 Run:
@@ -305,83 +386,77 @@ Run:
 npm run build
 ```
 
-A successful production build should generate the dashboard routes:
+The current application uses statically prerendered routes:
 
 ```text
 /
-/explore
-/ai-insights
-/recommendations
+├── /explore
+├── /ai-insights
+└── /recommendations
 ```
 
-## Deployment
+---
 
-The production dashboard is deployed through Vercel:
+## Public Deployment
+
+The deployed dashboard can be accessed without login or local installation:
 
 **https://databladez-tourism.vercel.app/**
 
-For normal dashboard use, judges and users do not need:
+---
 
-- Login credentials
-- Python
-- CatBoost
-- A local database
-- Browser plugins
-- A local ML environment
+## Dashboard Design
 
-## Project Structure
+Databladez uses a consistent visual identity based on:
 
-```text
-databladez-tourism/
-├── app/
-│   ├── ai-insights/
-│   ├── explore/
-│   ├── recommendations/
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-│
-├── components/
-│   ├── DistrictIntelligenceDashboard.tsx
-│   ├── ExploreDashboard.tsx
-│   ├── KpiCard.tsx
-│   ├── RecommendationsDashboard.tsx
-│   ├── Sidebar.tsx
-│   ├── StateComparisonChart.tsx
-│   ├── StateIntelligenceDashboard.tsx
-│   ├── StateValueScatter.tsx
-│   └── TourismTrendChart.tsx
-│
-├── datathon_final_package/
-│   ├── chart_data/
-│   ├── cleaned_data.csv
-│   ├── data_dictionary.csv
-│   ├── definitions.txt
-│   └── summary_metrics.json
-│
-├── ml/
-│   ├── artifacts/
-│   ├── outputs/
-│   ├── scripts/
-│   ├── DEVELOPER_HANDOFF.md
-│   └── README.md
-│
-├── README.md
-├── README.txt
-├── package.json
-└── package-lock.json
-```
+- Deep navy for primary navigation and analytical context
+- Amber and orange for highlights and selected signals
+- Light neutral backgrounds for analytical readability
+- Responsive layouts for desktop and mobile use
+
+The Databladez rollerblade identity represents the project tagline:
+
+> **Gliding Across Malaysia**
+
+---
+
+## Limitations
+
+The dashboard should be interpreted with the following limitations in mind:
+
+- Google Trends represents digital search interest rather than confirmed tourist demand.
+- Google Trends indices are independently normalized.
+- Forecasts represent search-interest indices rather than tourist arrivals.
+- Tourism Opportunity and Pressure Scores are relative composite indicators.
+- Development Support Context should not be interpreted as tourism demand.
+- Some district digital series contain insufficient variation for reliable scoring.
+- Socioeconomic indicators may come from different reference years depending on data availability.
+- The system does not include real-user behaviour, reviews, bookings, or personalized user profiles.
+- Local tourism planning decisions should incorporate additional qualitative and operational evidence.
+
+---
 
 ## DOSM Datathon 2026
 
-This project was developed for the **DOSM Datathon 2026** challenge under the theme:
+Databladez was developed for **DOSM Datathon 2026** as a Sustainable Tourism Intelligence solution.
 
-> Leveraging Machine Learning (ML) & Artificial Intelligence (AI) for sustainable tourism in Malaysia.
+The project includes:
 
-The dashboard demonstrates how tourism statistics, socioeconomic indicators, digital-interest signals and machine-learning outputs can be transformed into interpretable information for sustainable tourism decision support.
+- Interactive web dashboard
+- Data cleaning and exploratory analysis
+- Tourism intelligence indicators
+- Search-interest forecasting
+- State-level opportunity and pressure analysis
+- District emerging-signal analysis
+- Reproducible analytical outputs
+- Supporting documentation
+
+---
 
 ## Team
 
 **Databladez**
 
-Developed for DOSM Datathon 2026.
+*Gliding Across Malaysia*
+
+DOSM Datathon 2026
