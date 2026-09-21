@@ -236,14 +236,14 @@ export default function RecommendationsDashboard({
             (item.signal_category ===
               "emerging_signal_support_priority" ||
               item.signal_category ===
-              "rising_digital_interest")
+                "rising_digital_interest")
         )
         .sort((a, b) => {
           if (
             a.digital_emerging_signal_score ===
-            null &&
+              null &&
             b.digital_emerging_signal_score ===
-            null
+              null
           ) {
             return 0;
           }
@@ -282,6 +282,380 @@ export default function RecommendationsDashboard({
   const stateRecommendation =
     stateGuidance(selected.decision_pattern);
 
+  function handleStateBrief() {
+    const printWindow = window.open(
+      "",
+      "_blank",
+      "width=900,height=1000"
+    );
+
+    if (!printWindow) {
+      return;
+    }
+
+    const districtRows = priorityDistricts
+      .map(
+        (district) => `
+          <tr>
+            <td>${district.canonical_district}</td>
+
+            <td>
+              ${
+                district.digital_emerging_signal_score ===
+                null
+                  ? "Unavailable"
+                  : district.digital_emerging_signal_score.toFixed(
+                      1
+                    )
+              }
+            </td>
+
+            <td>
+              ${districtCategoryLabel(
+                district.signal_category
+              )}
+            </td>
+
+            <td style="text-transform: capitalize;">
+              ${district.data_confidence}
+            </td>
+          </tr>
+        `
+      )
+      .join("");
+
+    const districtSection =
+      priorityDistricts.length > 0
+        ? `
+          <section>
+            <h2>District Signals to Review</h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>District</th>
+                  <th>Digital Signal</th>
+                  <th>Category</th>
+                  <th>Confidence</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                ${districtRows}
+              </tbody>
+            </table>
+          </section>
+        `
+        : `
+          <section>
+            <h2>District Signals to Review</h2>
+
+            <p class="muted">
+              No Emerging Signal + Support Priority or Rising Digital
+              Interest districts are currently surfaced for this state.
+            </p>
+          </section>
+        `;
+
+    printWindow.document.write(`
+      <!DOCTYPE html>
+
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+
+          <title>
+            Databladez State Brief — ${selected.state}
+          </title>
+
+          <style>
+            @page {
+              size: A4;
+              margin: 14mm;
+            }
+
+            * {
+              box-sizing: border-box;
+            }
+
+            body {
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              color: #14263D;
+              background: white;
+            }
+
+            .page {
+              max-width: 780px;
+              margin: 0 auto;
+            }
+
+            .header {
+              border-bottom: 4px solid #F59E0B;
+              padding-bottom: 18px;
+            }
+
+            .brand {
+              font-size: 12px;
+              font-weight: 700;
+              letter-spacing: 1.4px;
+              color: #B45309;
+            }
+
+            h1 {
+              margin: 8px 0 4px;
+              font-size: 30px;
+              color: #14263D;
+            }
+
+            .subtitle {
+              margin: 0;
+              font-size: 13px;
+              color: #64748B;
+            }
+
+            .pattern {
+              display: inline-block;
+              margin-top: 12px;
+              padding: 6px 10px;
+              border-radius: 999px;
+              background: #FFF7E6;
+              color: #92400E;
+              font-size: 12px;
+              font-weight: 700;
+            }
+
+            section {
+              margin-top: 22px;
+            }
+
+            h2 {
+              margin: 0 0 10px;
+              font-size: 16px;
+              color: #14263D;
+            }
+
+            .metrics {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 10px;
+            }
+
+            .metric {
+              border: 1px solid #E2E8F0;
+              border-radius: 10px;
+              padding: 12px;
+            }
+
+            .metric-label {
+              margin: 0;
+              font-size: 10px;
+              text-transform: uppercase;
+              letter-spacing: 0.6px;
+              color: #64748B;
+            }
+
+            .metric-value {
+              margin: 5px 0 0;
+              font-size: 19px;
+              font-weight: 700;
+              color: #D97706;
+            }
+
+            .recommendation {
+              border: 1px solid #FCD34D;
+              border-radius: 10px;
+              background: #FFFCF7;
+              padding: 14px;
+            }
+
+            .recommendation h3 {
+              margin: 0;
+              font-size: 17px;
+              color: #92400E;
+            }
+
+            .recommendation p {
+              margin: 7px 0 0;
+              font-size: 12px;
+              line-height: 1.55;
+              color: #475569;
+            }
+
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              font-size: 10px;
+            }
+
+            th {
+              text-align: left;
+              padding: 8px;
+              background: #F8FAFC;
+              color: #64748B;
+              border-bottom: 1px solid #CBD5E1;
+            }
+
+            td {
+              padding: 8px;
+              border-bottom: 1px solid #E2E8F0;
+              vertical-align: top;
+            }
+
+            tr {
+              break-inside: avoid;
+              page-break-inside: avoid;
+            }
+
+            .note {
+              margin-top: 22px;
+              border-top: 1px solid #E2E8F0;
+              padding-top: 12px;
+              font-size: 9px;
+              line-height: 1.5;
+              color: #64748B;
+            }
+
+            .muted {
+              font-size: 11px;
+              color: #64748B;
+            }
+
+            .footer {
+              margin-top: 16px;
+              font-size: 9px;
+              color: #94A3B8;
+            }
+
+            @media print {
+              body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+              }
+            }
+          </style>
+        </head>
+
+        <body>
+          <main class="page">
+            <header class="header">
+              <div class="brand">
+                DATABLADEZ · SUSTAINABLE TOURISM INTELLIGENCE
+              </div>
+
+              <h1>
+                ${selected.state} State Brief
+              </h1>
+
+              <p class="subtitle">
+                Decision-support summary · DOSM Datathon 2026
+              </p>
+
+              <div class="pattern">
+                ${statePatternLabel(
+                  selected.decision_pattern
+                )}
+              </div>
+            </header>
+
+            <section>
+              <h2>State Intelligence</h2>
+
+              <div class="metrics">
+                <div class="metric">
+                  <p class="metric-label">
+                    Opportunity Score
+                  </p>
+
+                  <p class="metric-value">
+                    ${selected.opportunity_score.toFixed(
+                      1
+                    )}
+                  </p>
+                </div>
+
+                <div class="metric">
+                  <p class="metric-label">
+                    Pressure Score
+                  </p>
+
+                  <p class="metric-value">
+                    ${selected.pressure_score.toFixed(
+                      1
+                    )}
+                  </p>
+                </div>
+
+                <div class="metric">
+                  <p class="metric-label">
+                    Leading Opportunity Driver
+                  </p>
+
+                  <p
+                    class="metric-value"
+                    style="font-size: 14px;"
+                  >
+                    ${selected.top_opportunity_driver}
+                  </p>
+                </div>
+
+                <div class="metric">
+                  <p class="metric-label">
+                    Leading Pressure Driver
+                  </p>
+
+                  <p
+                    class="metric-value"
+                    style="font-size: 14px;"
+                  >
+                    ${selected.top_pressure_driver}
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2>Suggested Decision Direction</h2>
+
+              <div class="recommendation">
+                <h3>
+                  ${stateRecommendation.action}
+                </h3>
+
+                <p>
+                  ${stateRecommendation.explanation}
+                </p>
+              </div>
+            </section>
+
+            ${districtSection}
+
+            <div class="note">
+              Opportunity and Pressure Scores are relative analytical
+              indicators, not probabilities, investment returns or
+              direct measures of environmental impact. Google Trends
+              is used as a digital-interest proxy and does not
+              represent confirmed tourist demand. Recommendations
+              should be combined with local infrastructure,
+              environmental, feasibility and stakeholder evidence.
+            </div>
+
+            <div class="footer">
+              Databladez · Gliding Across Malaysia · DOSM Datathon 2026
+            </div>
+          </main>
+        </body>
+      </html>
+    `);
+
+    printWindow.document.close();
+    printWindow.focus();
+
+    setTimeout(() => {
+      printWindow.print();
+    }, 250);
+  }
+
   return (
     <div>
       {/* STATE DECISION SUPPORT */}
@@ -299,22 +673,36 @@ export default function RecommendationsDashboard({
             </p>
           </div>
 
-          <select
-            value={selectedState}
-            onChange={(event) =>
-              setSelectedState(event.target.value)
-            }
-            className="min-w-64 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none focus:border-[#F59E0B]"
-          >
-            {sortedStates.map((item) => (
-              <option
-                key={item.state}
-                value={item.state}
-              >
-                {item.state}
-              </option>
-            ))}
-          </select>
+          <div className="flex flex-col gap-2 sm:items-end">
+            <select
+              value={selectedState}
+              onChange={(event) =>
+                setSelectedState(
+                  event.target.value
+                )
+              }
+              className="min-w-64 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#14263D] outline-none focus:border-[#F59E0B]"
+            >
+              {sortedStates.map(
+                (item) => (
+                  <option
+                    key={item.state}
+                    value={item.state}
+                  >
+                    {item.state}
+                  </option>
+                )
+              )}
+            </select>
+
+            <button
+              type="button"
+              onClick={handleStateBrief}
+              className="text-xs font-semibold text-[#B45309] transition hover:text-[#92400E]"
+            >
+              Print / Save State Brief →
+            </button>
+          </div>
         </div>
       </div>
 
@@ -391,19 +779,25 @@ export default function RecommendationsDashboard({
 
             <div className="border-t border-amber-100 px-5 py-4">
               <p className="text-xs leading-5 text-slate-500">
-                This direction is based on the supplied state classification,
-                leading drivers and relative Opportunity and Pressure Scores.
+                This direction is based on the
+                supplied state classification,
+                leading drivers and relative
+                Opportunity and Pressure Scores.
               </p>
 
               <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <EvidenceItem
                   title="Opportunity driver"
-                  value={selected.top_opportunity_driver}
+                  value={
+                    selected.top_opportunity_driver
+                  }
                 />
 
                 <EvidenceItem
                   title="Pressure driver"
-                  value={selected.top_pressure_driver}
+                  value={
+                    selected.top_pressure_driver
+                  }
                 />
 
                 <EvidenceItem
@@ -470,7 +864,7 @@ export default function RecommendationsDashboard({
         </p>
       </div>
 
-      {/* LIMITATION — NOW SHOWN BEFORE DISTRICT RESULTS */}
+      {/* LIMITATION */}
 
       <div className="mb-6 rounded-2xl border border-amber-200 bg-[#FFFCF7] p-5">
         <span className="inline-flex rounded-full bg-[#FFF3D6] px-3 py-1 text-[10px] font-bold tracking-wider text-[#92400E]">
@@ -549,11 +943,11 @@ export default function RecommendationsDashboard({
                       title="Digital signal"
                       value={
                         district.digital_emerging_signal_score ===
-                          null
+                        null
                           ? "Unavailable"
                           : district.digital_emerging_signal_score.toFixed(
-                            1
-                          )
+                              1
+                            )
                       }
                     />
 
@@ -561,11 +955,11 @@ export default function RecommendationsDashboard({
                       title="Development context"
                       value={
                         district.development_support_context_score ===
-                          null
+                        null
                           ? "Unavailable"
                           : district.development_support_context_score.toFixed(
-                            1
-                          )
+                              1
+                            )
                       }
                     />
                   </div>

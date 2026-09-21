@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import DistrictCsvDownloadButton from "@/components/DistrictCsvDownloadButton";
 
 type DataConfidence = "high" | "medium" | "low";
 
@@ -55,8 +56,8 @@ export type DistrictSignalRecord = {
   context_component_count: number;
 
   development_support_context_score:
-    | number
-    | null;
+  | number
+  | null;
 
   signal_quality: SignalQuality;
   signal_category: SignalCategory;
@@ -115,8 +116,8 @@ function confidenceLabel(
   return `${confidence
     .charAt(0)
     .toUpperCase()}${confidence.slice(
-    1
-  )} confidence`;
+      1
+    )} confidence`;
 }
 
 function qualityLabel(
@@ -301,21 +302,21 @@ export default function DistrictIntelligenceDashboard({
 
           const matchesState =
             stateFilter ===
-              "all" ||
+            "all" ||
             item.state ===
-              stateFilter;
+            stateFilter;
 
           const matchesCategory =
             categoryFilter ===
-              "all" ||
+            "all" ||
             item.signal_category ===
-              categoryFilter;
+            categoryFilter;
 
           const matchesConfidence =
             confidenceFilter ===
-              "all" ||
+            "all" ||
             item.data_confidence ===
-              confidenceFilter;
+            confidenceFilter;
 
           return (
             matchesSearch &&
@@ -367,7 +368,7 @@ export default function DistrictIntelligenceDashboard({
     1,
     Math.ceil(
       filteredData.length /
-        ITEMS_PER_PAGE
+      ITEMS_PER_PAGE
     )
   );
 
@@ -649,17 +650,23 @@ export default function DistrictIntelligenceDashboard({
           </FilterGroup>
         </div>
 
-        <p className="mt-4 text-xs text-slate-400">
-          {filteredData.length} matching{" "}
-          {filteredData.length === 1
-            ? "record"
-            : "records"} of{" "}
-          {data.length} total
-        </p>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-slate-400">
+            {filteredData.length} matching{" "}
+            {filteredData.length === 1
+              ? "record"
+              : "records"}{" "}
+            of {data.length} total
+          </p>
+
+          <DistrictCsvDownloadButton
+            data={filteredData}
+          />
+        </div>
       </div>
 
       {/* =========================
-          TABLE + DETAIL
+          TABLE + DETAILnpm run dev
       ========================== */}
 
       <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[1.6fr_1fr]">
@@ -713,11 +720,10 @@ export default function DistrictIntelligenceDashboard({
                             item.series_id
                           )
                         }
-                        className={`cursor-pointer border-b border-slate-100 transition last:border-b-0 ${
-                          isSelected
+                        className={`cursor-pointer border-b border-slate-100 transition last:border-b-0 ${isSelected
                             ? "bg-[#FFF7E6]"
                             : "hover:bg-slate-50"
-                        }`}
+                          }`}
                       >
                         <TableCell>
                           <div>
@@ -729,13 +735,13 @@ export default function DistrictIntelligenceDashboard({
 
                             {item.area !==
                               item.canonical_district && (
-                              <p className="mt-1 text-xs text-slate-400">
-                                Search label:{" "}
-                                {
-                                  item.area
-                                }
-                              </p>
-                            )}
+                                <p className="mt-1 text-xs text-slate-400">
+                                  Search label:{" "}
+                                  {
+                                    item.area
+                                  }
+                                </p>
+                              )}
                           </div>
                         </TableCell>
 
@@ -747,7 +753,7 @@ export default function DistrictIntelligenceDashboard({
 
                         <TableCell>
                           {item.digital_emerging_signal_score ===
-                          null ? (
+                            null ? (
                             <span className="text-xs font-medium text-slate-400">
                               Unavailable
                             </span>
@@ -762,7 +768,7 @@ export default function DistrictIntelligenceDashboard({
 
                         <TableCell>
                           {item.development_support_context_score ===
-                          null ? (
+                            null ? (
                             <span className="text-xs text-slate-400">
                               Unavailable
                             </span>
@@ -797,17 +803,17 @@ export default function DistrictIntelligenceDashboard({
 
                 {filteredData.length ===
                   0 && (
-                  <tr>
-                    <td
-                      colSpan={6}
-                      className="p-12 text-center text-sm text-slate-500"
-                    >
-                      No locations
-                      match the
-                      selected filters.
-                    </td>
-                  </tr>
-                )}
+                    <tr>
+                      <td
+                        colSpan={6}
+                        className="p-12 text-center text-sm text-slate-500"
+                      >
+                        No locations
+                        match the
+                        selected filters.
+                      </td>
+                    </tr>
+                  )}
               </tbody>
             </table>
           </div>
@@ -1018,25 +1024,25 @@ function DistrictDetail({
 
       {item.digital_emerging_signal_score ===
         null && (
-        <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
-          <p className="text-sm font-medium text-slate-600">
-            Insufficient digital
-            variation for a reliable
-            score.
-          </p>
-        </div>
-      )}
+          <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p className="text-sm font-medium text-slate-600">
+              Insufficient digital
+              variation for a reliable
+              score.
+            </p>
+          </div>
+        )}
 
       {item.development_support_context_score ===
         null && (
-        <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
-          <p className="text-sm font-medium text-slate-600">
-            Development context
-            is unavailable for this
-            district.
-          </p>
-        </div>
-      )}
+          <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p className="text-sm font-medium text-slate-600">
+              Development context
+              is unavailable for this
+              district.
+            </p>
+          </div>
+        )}
     </div>
   );
 }
