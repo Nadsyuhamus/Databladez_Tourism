@@ -75,38 +75,39 @@ function stateGuidance(pattern: string) {
   > = {
     emerging_opportunity: {
       action:
-        "Evaluate targeted tourism development opportunities",
+        "Assess targeted promotion and local-product development",
       explanation:
-        "The state shows relatively stronger opportunity signals. Review the leading opportunity driver together with pressure indicators before expanding tourism activity.",
+        "The state shows an emerging opportunity pattern. Review local tourism products, infrastructure capacity and feasibility before scaling promotional activity.",
     },
 
     growth_with_pressure: {
       action:
-        "Balance growth with stronger destination monitoring",
+        "Prioritise capacity, visitor dispersion and infrastructure review",
       explanation:
-        "Growth signals are present alongside relatively higher tourism pressure. Expansion should be paired with closer monitoring of the pressure drivers.",
+        "Growth signals are present alongside stronger monitoring-pressure signals. Further tourism expansion should be paired with capacity assessment and visitor-dispersion planning.",
     },
 
     pressure_monitoring_priority: {
       action:
-        "Prioritise monitoring before further demand stimulation",
+        "Investigate capacity constraints before stimulating additional demand",
       explanation:
-        "The state shows relatively stronger monitoring-pressure signals. Review tourism intensity, growth and digital-interest momentum before increasing promotion.",
+        "Monitoring-pressure signals are relatively stronger. Review tourism intensity, visitor growth and digital-interest momentum before increasing promotional activity.",
     },
 
     developing_or_early_signal: {
       action:
-        "Monitor emerging indicators and strengthen evidence",
+        "Validate tourism readiness before larger intervention",
       explanation:
-        "Signals are still developing. Continue monitoring tourism demand, spending and digital-interest indicators before committing to larger interventions.",
+        "The evidence is still developing. Assess local feasibility, tourism products, infrastructure and stakeholder readiness while continuing to monitor the available indicators.",
     },
   };
 
   return (
     guidance[pattern] ?? {
-      action: "Continue monitoring tourism indicators",
+      action:
+        "Continue monitoring and validate local readiness",
       explanation:
-        "Review the available opportunity, pressure and forecast signals before making a tourism-development decision.",
+        "Review the available opportunity, pressure and forecast signals together with local feasibility and stakeholder evidence before taking action.",
     }
   );
 }
@@ -121,52 +122,53 @@ function districtGuidance(category: string) {
   > = {
     emerging_signal_support_priority: {
       action:
-        "Investigate for targeted support and destination development",
+        "Commission a local feasibility and community-readiness assessment",
       explanation:
-        "This district combines a relatively strong digital emerging signal with higher development-support context. Further local feasibility assessment is recommended.",
+        "The district combines a relatively strong digital emerging signal with higher Development Support Context. Validate infrastructure, community priorities and destination readiness before targeted development.",
     },
 
     rising_digital_interest: {
       action:
-        "Monitor rising digital interest and validate local tourism readiness",
+        "Assess readiness for targeted tourism promotion",
       explanation:
-        "Digital momentum is relatively strong. Validate infrastructure, tourism products and local capacity before translating the signal into promotional action.",
+        "Digital interest is rising. Review tourism products, accessibility, infrastructure and local capacity before translating the signal into promotional activity.",
     },
 
     development_context_monitoring: {
       action:
-        "Focus on development context and tourism readiness",
+        "Prioritise enabling conditions and tourism-readiness assessment",
       explanation:
-        "Development-support needs are relatively higher while digital momentum is not among the strongest signals. Consider enabling conditions before demand stimulation.",
+        "Development-support needs are relatively higher while digital momentum is not among the strongest signals. Review infrastructure and local readiness before stimulating additional demand.",
     },
 
     stable_or_lower_digital_signal: {
       action:
-        "Maintain observation rather than aggressive intervention",
+        "Maintain monitoring before expanding intervention",
       explanation:
-        "The current digital signal is relatively stable or lower. Continue monitoring changes over time before escalating tourism-development activity.",
+        "The current digital signal is relatively stable or lower. Continue observing changes over time and avoid escalating tourism-development activity without additional evidence.",
     },
 
     insufficient_digital_variation: {
       action:
-        "Do not infer tourism momentum from the available digital series",
+        "Do not infer tourism momentum from this digital series",
       explanation:
-        "The Google Trends series does not contain enough variation for a reliable digital emerging-signal score.",
+        "The Google Trends series does not contain enough variation for a reliable digital emerging-signal score. Use other local evidence instead.",
     },
 
     digital_signal_only_context_incomplete: {
       action:
-        "Use the digital signal cautiously until context data improves",
+        "Validate socioeconomic context before development interpretation",
       explanation:
-        "A digital signal is available, but socioeconomic context is incomplete. Avoid making a development-support interpretation from incomplete evidence.",
+        "A digital signal is available, but socioeconomic context is incomplete. Avoid making development-support conclusions until additional context is available.",
     },
   };
 
   return (
     guidance[category] ?? {
-      action: "Continue monitoring available indicators",
+      action:
+        "Review local evidence before taking action",
       explanation:
-        "Use the supplied digital and development-context indicators together with local evidence.",
+        "Use the supplied digital and development-context indicators together with infrastructure, feasibility and stakeholder evidence.",
     }
   );
 }
@@ -234,14 +236,14 @@ export default function RecommendationsDashboard({
             (item.signal_category ===
               "emerging_signal_support_priority" ||
               item.signal_category ===
-                "rising_digital_interest")
+              "rising_digital_interest")
         )
         .sort((a, b) => {
           if (
             a.digital_emerging_signal_score ===
-              null &&
+            null &&
             b.digital_emerging_signal_score ===
-              null
+            null
           ) {
             return 0;
           }
@@ -382,41 +384,44 @@ export default function RecommendationsDashboard({
             {stateRecommendation.explanation}
           </p>
 
-          <div className="mt-6 rounded-xl border border-amber-100 bg-white/70 p-5">
-            <p className="text-xs font-semibold text-slate-500">
-              Evidence to review
-            </p>
+          <details className="mt-6 rounded-xl border border-amber-100 bg-[#FFFCF7]">
+            <summary className="cursor-pointer px-5 py-4 text-sm font-semibold text-[#92400E]">
+              Why this recommendation?
+            </summary>
 
-            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <EvidenceItem
-                title="Opportunity driver"
-                value={
-                  selected.top_opportunity_driver
-                }
-              />
+            <div className="border-t border-amber-100 px-5 py-4">
+              <p className="text-xs leading-5 text-slate-500">
+                This direction is based on the supplied state classification,
+                leading drivers and relative Opportunity and Pressure Scores.
+              </p>
 
-              <EvidenceItem
-                title="Pressure driver"
-                value={
-                  selected.top_pressure_driver
-                }
-              />
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <EvidenceItem
+                  title="Opportunity driver"
+                  value={selected.top_opportunity_driver}
+                />
 
-              <EvidenceItem
-                title="Opportunity score"
-                value={selected.opportunity_score.toFixed(
-                  1
-                )}
-              />
+                <EvidenceItem
+                  title="Pressure driver"
+                  value={selected.top_pressure_driver}
+                />
 
-              <EvidenceItem
-                title="Pressure score"
-                value={selected.pressure_score.toFixed(
-                  1
-                )}
-              />
+                <EvidenceItem
+                  title="Opportunity score"
+                  value={selected.opportunity_score.toFixed(
+                    1
+                  )}
+                />
+
+                <EvidenceItem
+                  title="Pressure score"
+                  value={selected.pressure_score.toFixed(
+                    1
+                  )}
+                />
+              </div>
             </div>
-          </div>
+          </details>
         </div>
 
         <div className="rounded-2xl border border-orange-200 bg-[#FFF8F3] p-6">
@@ -544,11 +549,11 @@ export default function RecommendationsDashboard({
                       title="Digital signal"
                       value={
                         district.digital_emerging_signal_score ===
-                        null
+                          null
                           ? "Unavailable"
                           : district.digital_emerging_signal_score.toFixed(
-                              1
-                            )
+                            1
+                          )
                       }
                     />
 
@@ -556,11 +561,11 @@ export default function RecommendationsDashboard({
                       title="Development context"
                       value={
                         district.development_support_context_score ===
-                        null
+                          null
                           ? "Unavailable"
                           : district.development_support_context_score.toFixed(
-                              1
-                            )
+                            1
+                          )
                       }
                     />
                   </div>

@@ -197,6 +197,62 @@ export default function StateIntelligenceDashboard({
 
   return (
     <div>
+
+      {/* MODEL PERFORMANCE */}
+
+      <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-6">
+        <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-start">
+          <div>
+            <p className="text-xs font-bold tracking-wider text-[#B45309]">
+              MODEL PERFORMANCE
+            </p>
+
+            <h3 className="mt-2 text-xl font-bold text-[#14263D]">
+              Validated Forecasting Model
+            </h3>
+
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+              The segmented hybrid model was evaluated using rolling-origin
+              validation and an untouched 2025 test set.
+            </p>
+          </div>
+
+          <span className="w-fit rounded-full border border-amber-200 bg-[#FFF7E6] px-4 py-2 text-xs font-semibold text-[#92400E]">
+            1.82% lower test MAE
+          </span>
+        </div>
+
+        <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="rounded-xl bg-slate-50 p-4">
+            <p className="text-xs font-medium text-slate-500">
+              Hybrid MAE
+            </p>
+
+            <p className="mt-2 text-2xl font-bold text-[#D97706]">
+              1.821
+            </p>
+          </div>
+
+          <div className="rounded-xl bg-slate-50 p-4">
+            <p className="text-xs font-medium text-slate-500">
+              Three-month baseline MAE
+            </p>
+
+            <p className="mt-2 text-2xl font-bold text-[#14263D]">
+              1.854
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 border-t border-slate-100 pt-4">
+          <p className="text-xs leading-5 text-slate-500">
+            MAE measures average forecast error in Google Trends index
+            points; lower values indicate lower error. Rolling-origin
+            validation used 2022–2024, followed by final testing on 2025.
+          </p>
+        </div>
+      </div>
+      
       {/* STATE SELECTOR */}
 
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
@@ -271,6 +327,7 @@ export default function StateIntelligenceDashboard({
             selected.opportunity_score
           )}
           description="Relative composite indicator across Malaysian states"
+          info="Combines visitor growth, tourism spending value, forecast momentum, search growth, tourism headroom and development context. Higher values indicate stronger combined opportunity signals, not investment return or probability of tourism growth."
         />
 
         <ScoreCard
@@ -279,6 +336,7 @@ export default function StateIntelligenceDashboard({
             selected.pressure_score
           )}
           description="Relative tourism monitoring pressure"
+          info="Based on tourism intensity, visitor growth, forecast momentum and search growth. Higher values indicate stronger monitoring signals, not measured environmental or social damage."
         />
 
         <ScoreCard
@@ -448,14 +506,13 @@ export default function StateIntelligenceDashboard({
 
             <MiniMetric
               label="Change in Points"
-              value={`${
-                selected.forecast_change_points >
+              value={`${selected.forecast_change_points >
                 0
-                  ? "+"
-                  : ""
-              }${selected.forecast_change_points.toFixed(
-                1
-              )}`}
+                ? "+"
+                : ""
+                }${selected.forecast_change_points.toFixed(
+                  1
+                )}`}
             />
 
             <MiniMetric
@@ -539,20 +596,34 @@ type ScoreCardProps = {
   title: string;
   value: string;
   description: string;
+  info?: string;
 };
 
 function ScoreCard({
   title,
   value,
   description,
+  info,
 }: ScoreCardProps) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5">
       <div className="mb-4 h-1 w-10 rounded-full bg-[#F59E0B]" />
 
-      <p className="text-sm font-medium text-slate-500">
-        {title}
-      </p>
+      <div className="flex items-center gap-2">
+        <p className="text-sm font-medium text-slate-500">
+          {title}
+        </p>
+
+        {info && (
+          <span
+            title={info}
+            className="inline-flex h-5 w-5 cursor-help items-center justify-center rounded-full border border-slate-300 text-[11px] font-bold text-slate-500"
+            aria-label={`${title} information`}
+          >
+            i
+          </span>
+        )}
+      </div>
 
       <p className="mt-2 text-2xl font-bold text-[#D97706]">
         {value}
