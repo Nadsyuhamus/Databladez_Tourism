@@ -91,6 +91,9 @@ Includes:
 - Development Support Context
 - Data-confidence classification
 - Signal-quality information
+- Validated model-performance summary
+- Preview filtered district records before export
+- Export filtered district records as CSV
 
 ---
 
@@ -106,8 +109,25 @@ The page provides:
 - Leading evidence
 - Relevant district signals for the selected state
 - Confidence-aware district recommendations
+- Expandable "Why this recommendation?" evidence
+- Printable / Save-as-PDF state brief
 
 Recommendations should be interpreted together with local feasibility, infrastructure, stakeholder knowledge, and other supporting evidence.
+
+---
+
+### 5. Data Sources & Methodology
+
+Provides transparency on the analytical workflow and interpretation of the dashboard outputs.
+
+The page includes:
+
+- Data sources and coverage
+- Analytical pipeline
+- Forecasting approach
+- Model validation results
+- Opportunity, Pressure, and Digital Signal definitions
+- Key limitations and interpretation guidance
 
 ---
 
@@ -270,6 +290,17 @@ Exact dataset provenance, transformations, assumptions, and references should be
 - NumPy
 - Statistical and exploratory data analysis
 
+### Model Validation
+
+The final segmented hybrid forecasting approach achieved:
+
+- Hybrid test MAE: **1.821**
+- Three-month baseline test MAE: **1.854**
+- Test MAE improvement: **1.82%**
+
+Rolling-origin validation was conducted using 2022, 2023, and 2024,
+followed by final evaluation on the untouched 2025 test period.
+
 ### Deployment
 
 - Vercel
@@ -296,12 +327,14 @@ Databladez_Tourism/
 │   ├── ai-insights/
 │   ├── explore/
 │   ├── recommendations/
+│   ├── methodology/
 │   ├── icon.svg
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
 │
 ├── components/
+│   ├── DistrictCsvDownloadButton.tsx
 │   ├── DistrictIntelligenceDashboard.tsx
 │   ├── ExploreDashboard.tsx
 │   ├── KpiCard.tsx
@@ -392,7 +425,8 @@ The current application uses statically prerendered routes:
 /
 ├── /explore
 ├── /ai-insights
-└── /recommendations
+├── /recommendations
+└── /methodology
 ```
 
 ---
